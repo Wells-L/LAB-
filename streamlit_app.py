@@ -14,6 +14,7 @@ numero_2 = st.text_input("digite outro numero")
 
 st.write(f"O numero escrito é : {numero_2}")
 
-soma = int(numero_1) + int(numero_2)
 
-st.write(f"A soma dos numeros é : {soma}")
+if numero_1 and numero_2: 
+  soma = int(numero_1) + int(numero_2)
+  st.write(f"A soma dos numeros é : {soma}")
