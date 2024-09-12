@@ -1,5 +1,6 @@
 
 import streamlit as st
+import math
 
 st.title("Calculadora")
 
@@ -12,7 +13,7 @@ numero_2 = st.text_input("digite outro numero")
 
 
 
-operacao = st.selectbox("Escolha a operação", ["soma", "subtração", "resultado", "divisão","potenciação","raiz quadrada"])
+operacao = st.selectbox("Escolha a operação", ["soma", "subtração","divisão","potenciação","raiz quadrada"])
 resultado = None
 
 if numero_1 and numero_2:
@@ -42,3 +43,7 @@ if numero_1 and numero_2:
     resultado = float(numero_1) ** float(numero_2)
     st.write(f"A potenciação dos numeros é : {resultado }")
 
+  elif operacao == "raiz quadrada":
+
+    resultado = sqrt(float(numero_1))
+    st.write(f"A raiz quadrada dos numeros é : {resultado }")
