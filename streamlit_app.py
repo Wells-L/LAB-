@@ -21,7 +21,7 @@ if numero_1 and numero_2:
 
 
 
-  operacao = input("digite a operação que deseja realizar: ")
+  operacao = st.text_input("digite a operação que deseja realizar: ")
 
 
 if operacao == "+" or operacao == "soma":
