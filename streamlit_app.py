@@ -16,20 +16,21 @@ st.write(f"O numero escrito é : {numero_2}")
 operacao = st.selectbox("Escolha a operação", ["soma", "subtração", "multiplicação", "divisão"])
 
 if operacao == "soma":
-  soma = int(numero_1) + int(numero_2)
+  soma = float(numero_1) + float(numero_2)
   st.write(f"A soma dos numeros é : {soma}")
 
 elif operacao == "subtração":
-  subtração = int(numero_1) - int(numero_2)
+  subtração = float(numero_1) - float(numero_2)
   st.write(f"A subtração dos numeros é : {subtração }")
 
 elif operacao == "multiplicação":
-  multiplicação = int(numero_1) * int(numero_2)
+  multiplicação = float(numero_1) * float(numero_2)
   st.write(f"A multiplicação dos numeros é : {multiplicação }")
 
 elif operacao == "divisão":
-  divisão = int(numero_1) / int(numero_2)
+  divisão = float(numero_1) / float(numero_2)
   st.write(f"A divisão dos numeros é : {divisão }")
+  
 
 
 
