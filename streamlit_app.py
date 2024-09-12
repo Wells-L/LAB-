@@ -1,6 +1,7 @@
 
 import streamlit as st
-import math
+import math as mt
+from math import sqrt
 
 st.title("Calculadora")
 
