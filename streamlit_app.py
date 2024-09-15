@@ -5,7 +5,7 @@ from math import sqrt
 
 # side bar para selecao de paginas
 st.sidebar.title("menu do Lucas")
-page = st.sidebar.selectbox("escolha uma pagina",["Calculadora"],["Conversor"] )
+page = st.sidebar.selectbox("escolha uma pagina",["Calculadora","Conversor"])
 
 if page == "Calculadora":
 
