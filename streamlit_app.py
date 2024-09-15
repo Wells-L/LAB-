@@ -5,7 +5,7 @@ from math import sqrt
 
 # side bar para selecao de paginas
 st.sidebar.title("menu do Lucas")
-page = st.sidebar.selectbox("escolha uma pagina",["Calculadora","Conversor"])
+page = st.sidebar.selectbox("escolha uma pagina",["Calculadora","Conversor","Gráficos"])
 
 if page == "Calculadora":
 
@@ -71,3 +71,12 @@ elif page == "Conversor":
       st.write(f"Result: ${dollar_value:.2f}")
     except ValueError:
       st.write("Invalid input. Please enter a valid number.")
+
+      
+
+ elif page == "Gráficos":
+
+  st.title("graficos")     
+
+  st.write("Nao possui codigo ainda")
+
