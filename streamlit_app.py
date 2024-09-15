@@ -72,9 +72,9 @@ elif page == "Conversor":
     except ValueError:
       st.write("Invalid input. Please enter a valid number.")
 
-      
 
- elif page == "Gráficos":
+
+elif page == "Gráficos":
 
   st.title("graficos")     
 
