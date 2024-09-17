@@ -116,11 +116,23 @@ elif page == "testes ":
 
 
 elif page == "testes2":
+ 
+  url = "https://api.exchangerate-api.com/v4/latest/USD"
+  my_resquest = requests.get(url)
+
+  content = my_resquest.content
+  dados = json.loads(content)
+
+  dados['rates']["BRL"]
+
+  taxa_de_conversao = (dados['rates']["BRL"])
+
+
 
   st.title("Conversor 3")
   moeda = st.selectbox("Moeda",["real","dolar"])
 
-  valor_real = 0.18
+  valor_real = (valor_dolar * taxa_de_conversao)
   valor_dolar = 5.33
 
   
