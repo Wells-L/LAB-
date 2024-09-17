@@ -2,6 +2,8 @@
 import streamlit as st
 import math as mt
 from math import sqrt
+import requests
+import json
 
 # side bar para selecao de paginas
 st.sidebar.title("menu do Lucas")
@@ -88,7 +90,7 @@ elif page == "testes":
 
     number = st.number_input("insira um valor em Dolar")
     resultado = (number * valor_dolar)
-    st.write(f"o Resultado é : ${resultado}")
+    st.write(f"o Resultado é : R${resultado}")
  
 
   
@@ -96,4 +98,17 @@ elif page == "testes":
     number = st.number_input("insira um valor em real")
     resultado = (number * valor_real)
 
-    st.write(f"o Resultado é : usd{resultado}")
+    st.write(f"o Resultado é : USD {resultado}")
+
+
+
+
+  url = "https://api.exchangerate-api.com/v4/latest/USD"
+  my_resquest = requests.get(url)
+
+  content = my_resquest.content
+  dados = json.loads(content)
+
+  dados['rates']["BRL"]
+
+  st.write(dados['rates']["BRL"])
