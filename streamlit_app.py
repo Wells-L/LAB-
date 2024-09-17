@@ -77,7 +77,9 @@ elif page == "Conversor":
 elif page == "testes":
 
   st.title("Conversor 2")
+  st.selectbox("real","dolar")
 
   number = st.number_input("Insert a number")
   st.write("The current number is ", number)
+
 
