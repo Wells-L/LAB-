@@ -89,7 +89,7 @@ elif page == "testes":
   if moeda == "dolar":
 
     resultado = (number * valor_dolar)
-
+    st.write(f"o Resultado é : USD{resultado}")
  
 
   
@@ -97,4 +97,4 @@ elif page == "testes":
 
     resultado = (number * valor_real)
 
-  st.write(f"o Resultado é : {resultado}")
+    st.write(f"o Resultado é : ${resultado}")
