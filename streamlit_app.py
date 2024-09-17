@@ -79,8 +79,6 @@ elif page == "testes":
   st.title("Conversor 2")
   moeda = st.selectbox("Moeda",["real","dolar"])
 
-  number = st.number_input("Insert a number")
-
   valor_real = 0.18
   valor_dolar = 5.33
 
@@ -88,13 +86,14 @@ elif page == "testes":
 
   if moeda == "dolar":
 
+    number = st.number_input("insira um valor em Dolar")
     resultado = (number * valor_dolar)
     st.write(f"o Resultado é : USD{resultado}")
  
 
   
   elif moeda == "real":
-
+    number = st.number_input("insira um valor em real")
     resultado = (number * valor_real)
 
     st.write(f"o Resultado é : ${resultado}")
