@@ -84,16 +84,16 @@ elif page == "testes ":
   valor_real = 0.18
   valor_dolar = 5.33
 
-  
+
 
   if moeda == "dolar":
 
     numero_dolar = st.number_input("insira um valor em Dolar")
     resultado = (numero_dolar * valor_dolar)
     st.write(f"o Resultado é : R${resultado}")
- 
 
-  
+
+
   elif moeda == "real":
     numero_real = st.number_input("insira um valor em real")
     resultado = (valor_real * valor_real)
@@ -116,7 +116,7 @@ elif page == "testes ":
 
 
 elif page == "testes2":
- 
+
   url = "https://api.exchangerate-api.com/v4/latest/USD"
   my_resquest = requests.get(url)
 
@@ -135,30 +135,30 @@ elif page == "testes2":
 
   valor_dolar = 5.33
   valor_real = (valor_dolar * taxa_de_conversao)
-  
-  
+
+
 
   if moeda == "dolar":
 
     numero_dolar = st.number_input("insira um valor em Dolar")
-    resultado = (numero_dolar * valor_dolar)
+    resultado = (valor_real * valor_dolar)
     st.write(f"o Resultado é : R${resultado}")
- 
 
-  
+
+
   elif moeda == "real":
     numero_real = st.number_input("insira um valor em real")
     resultado = (valor_real * valor_real)
 
     st.write(f"o Resultado é : USD {resultado}")
 
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
   url = "https://api.exchangerate-api.com/v4/latest/USD"
   my_resquest = requests.get(url)
 
