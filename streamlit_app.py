@@ -7,7 +7,7 @@ import json
 
 # side bar para selecao de paginas
 st.sidebar.title("menu do Lucas")
-page = st.sidebar.selectbox("escolha uma pagina",["Calculadora","Conversor","testes","teste 2"])
+page = st.sidebar.selectbox("escolha uma pagina",["Calculadora","Conversor","testes","testes2"])
 
 if page == "Calculadora":
 
@@ -115,7 +115,7 @@ elif page == "testes ":
 
 
 
-elif page == "testes 2":
+elif page == "testes2":
 
   st.title("Conversor 3")
   moeda = st.selectbox("Moeda",["real","dolar"])
