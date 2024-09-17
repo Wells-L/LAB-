@@ -133,7 +133,7 @@ elif page == "testes2":
   moeda = st.selectbox("Moeda",["real","dolar"])
 
 
-  valor_dolar = 5.33
+  valor_dolar = 1
   valor_real = (valor_dolar * taxa_de_conversao)
 
 
@@ -141,14 +141,16 @@ elif page == "testes2":
   if moeda == "dolar":
 
     numero_dolar = st.number_input("insira um valor em Dolar")
-    resultado = (valor_real * valor_dolar)
+    resultado = (numero_dolar * valor_dolar)
     st.write(f"o Resultado é : R${resultado}")
 
 
 
   elif moeda == "real":
     numero_real = st.number_input("insira um valor em real")
-    resultado = (valor_dolar * valor_real)
+    resultado = (numero_real * valor_real)
 
     st.write(f"o Resultado é : USD {resultado}")
+
+    
 
