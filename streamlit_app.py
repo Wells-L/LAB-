@@ -88,7 +88,7 @@ elif page == "testes":
 
     number = st.number_input("insira um valor em Dolar")
     resultado = (number * valor_dolar)
-    st.write(f"o Resultado é : USD{resultado}")
+    st.write(f"o Resultado é : ${resultado}")
  
 
   
@@ -96,4 +96,4 @@ elif page == "testes":
     number = st.number_input("insira um valor em real")
     resultado = (number * valor_real)
 
-    st.write(f"o Resultado é : ${resultado}")
+    st.write(f"o Resultado é : usd{resultado}")
