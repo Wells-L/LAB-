@@ -5,7 +5,7 @@ from math import sqrt
 
 # side bar para selecao de paginas
 st.sidebar.title("menu do Lucas")
-page = st.sidebar.selectbox("escolha uma pagina",["Calculadora","Conversor","Gráficos"])
+page = st.sidebar.selectbox("escolha uma pagina",["Calculadora","Conversor","testes"])
 
 if page == "Calculadora":
 
@@ -57,7 +57,7 @@ if page == "Calculadora":
       st.write(f"A raiz quadrada dos numeros é : {resultado }")
 
 
-elif page == "Conversor": 
+elif page == "Conversor":
 
   st.title("Conversor")
 
@@ -74,9 +74,10 @@ elif page == "Conversor":
 
 
 
-elif page == "Gráficos":
+elif page == "testes":
 
-  st.title("graficos")     
+  st.title("Conversor 2")
 
-  st.write("Nao possui codigo ainda")
+  number = st.number_input("Insert a number")
+  st.write("The current number is ", number)
 
