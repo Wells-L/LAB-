@@ -132,9 +132,10 @@ elif page == "testes2":
   st.title("Conversor 3")
   moeda = st.selectbox("Moeda",["real","dolar"])
 
-  valor_real = (valor_dolar * taxa_de_conversao)
-  valor_dolar = 5.33
 
+  valor_dolar = 5.33
+  valor_real = (valor_dolar * taxa_de_conversao)
+  
   
 
   if moeda == "dolar":
