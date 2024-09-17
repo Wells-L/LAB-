@@ -80,6 +80,17 @@ elif page == "testes":
   moeda = st.selectbox("Moeda",["real","dolar"])
 
   number = st.number_input("Insert a number")
-  st.write("The current number is ", number)
+
+  valor_real = 0.18
+  valor_dolar = 5.33
+
+  st.write("o resultado é : ", resultado)
+
+  valor_real = 0.18
+  valor_dolar = 5.33
 
 
+  Resultado = (number * valor_real)
+
+  
+  st.write("o resultado é : ", resultado)
