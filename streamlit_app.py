@@ -97,4 +97,4 @@ elif page == "testes":
 
     resultado = (number * valor_real)
 
-  st.write(f"o Resultado é : {"resultado"})
+  st.write(f"o Resultado é : {resultado}")
