@@ -148,23 +148,7 @@ elif page == "testes2":
 
   elif moeda == "real":
     numero_real = st.number_input("insira um valor em real")
-    resultado = (valor_real * valor_real)
+    resultado = (valor_dolar * valor_real)
 
     st.write(f"o Resultado é : USD {resultado}")
 
-
-
-
-
-
-
-
-  url = "https://api.exchangerate-api.com/v4/latest/USD"
-  my_resquest = requests.get(url)
-
-  content = my_resquest.content
-  dados = json.loads(content)
-
-  dados['rates']["BRL"]
-
-  taxa_de_conversao = (dados['rates']["BRL"])
