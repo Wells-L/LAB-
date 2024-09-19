@@ -126,14 +126,14 @@ elif page == "testes2":
   dados['rates']["BRL"]
 
   taxa_de_conversao = (dados['rates']["BRL"])
-
+  taxa_conversao_dolar =  (dados['rates']["USD"])/(dados['rates']["BRL"])
 
 
   st.title("Conversor 3")
   moeda = st.selectbox("Moeda",["real","dolar"])
 
 
-  valor_dolar = 1
+  valor_dolar =  taxa_conversao_dolar
   valor_real = (valor_dolar * taxa_de_conversao)
 
 
@@ -152,5 +152,5 @@ elif page == "testes2":
 
     st.write(f"o Resultado é : USD {resultado}")
 
-    
+
 
