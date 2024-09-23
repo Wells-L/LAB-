@@ -84,6 +84,7 @@ elif page == "testes ":
   valor_real = 0.18
   valor_dolar = 5.33
 
+  real_dolar =
 
 
   if moeda == "dolar":
