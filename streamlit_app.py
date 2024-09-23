@@ -134,7 +134,7 @@ elif page == "testes2":
 
 
   valor_do_dolar_para_real = (dados['rates']["BRL"])
- 
+  valor_do_real_para_dolar = (dados['rates']["USD"])/(dados['rates']["BRL"])
 
 
 
