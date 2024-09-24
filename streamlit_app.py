@@ -106,32 +106,11 @@ elif page == "testes2":
 
   dados['rates']["BRL"]
 
-  taxa_de_conversao = (dados['rates']["BRL"])
-  taxa_conversao_dolar =  (dados['rates']["USD"])/(dados['rates']["BRL"])
+  col_1,col_2 = st.columns(2)
 
+  with col_1:
 
-  st.title("Conversor 3")
-  moeda = st.selectbox("Moeda",["real","dolar"])
-
-
-  valor_do_dolar_para_real = (dados['rates']["BRL"])
-  valor_do_real_para_dolar = (dados['rates']["USD"])/(dados['rates']["BRL"])
-
-
-
-  if moeda == "dolar":
-
-    numero_dolar = st.number_input("insira um valor em Dolar PARA REAL")
-    resultado = (numero_dolar * valor_do_dolar_para_real)
-    st.write(f"o Resultado é : R${resultado}")
-
-
-
-  elif moeda == "real":
-    numero_real = st.number_input("insira um valor em real PARA DOLAR")
-    resultado = (numero_real * valor_real)
-
-    st.write(f"o Resultado é : USD {resultado}")
-
-
-
+    st.write("testando coluna 1")
+    
+  with col_2:
+    st.write("testando coluna 2")
