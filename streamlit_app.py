@@ -112,5 +112,7 @@ elif page == "testes2":
     moeda_1 = st.selectbox("Moeda 1", lista_moeda)
     moeda_2 = st.selectbox("Moeda 2", lista_moeda)
 
+    st.number_input("digite um valor")
+
   with col_2:
     st.write("testando coluna 2")
