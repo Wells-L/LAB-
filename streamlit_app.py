@@ -81,32 +81,19 @@ elif page == "testes":
   st.title("Conversor 2")
   moeda = st.selectbox("Moeda", ["real", "dolar"])
 
- # Valores de conversão
-  valor_real_para_dolar = 5.48
-  valor_dolar_para_real = 1.00
+ 
+  valor_real_para_dolar = 5.45
+  
 
   if moeda == "dolar":
     numero_dolar = st.number_input("Insira um valor em Dólar para real")
     resultado = numero_dolar * valor_real_para_dolar
-    st.write(f"O resultado é: R$ {resultado:}")
+    st.write(f"O resultado é: R$ {resultado:.2f}")
 
   elif moeda == "real":
     numero_real = st.number_input("Insira um valor em Real para Dólar")
     resultado = numero_real / valor_real_para_dolar
     st.write(f"O resultado é: USD {resultado:}")
-
-
-
-  url = "https://api.exchangerate-api.com/v4/latest/USD"
-  my_resquest = requests.get(url)
-
-  content = my_resquest.content
-  dados = json.loads(content)
-
-  dados['rates']["BRL"]
-
-  taxa_de_conversao = (dados['rates']["BRL"])
-
 
 
 elif page == "testes2":
