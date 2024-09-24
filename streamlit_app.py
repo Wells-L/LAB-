@@ -93,7 +93,7 @@ elif page == "testes":
   elif moeda == "real":
     numero_real = st.number_input("Insira um valor em Real para Dólar")
     resultado = numero_real / valor_real_para_dolar
-    st.write(f"O resultado é: USD {resultado:}")
+    st.write(f"O resultado é: USD {resultado:.2f}")
 
 
 elif page == "testes2":
