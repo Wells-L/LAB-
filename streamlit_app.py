@@ -76,32 +76,24 @@ elif page == "Conversor":
 
 
 
-elif page == "testes ":
+elif page == "testes":
 
   st.title("Conversor 2")
-  moeda = st.selectbox("Moeda",["real","dolar"])
+  moeda = st.selectbox("Moeda", ["real", "dolar"])
 
-  valor_real = 5.48
-  valor_dolar = 1.00
-
-
-
+ # Valores de conversão
+  valor_real_para_dolar = 5.48
+  valor_dolar_para_real = 1.00
 
   if moeda == "dolar":
-
-    numero_dolar = st.number_input("insira um valor em Dolar PARA REAL")
-    resultado = (numero_dolar * valor_dolar)
-    st.write(f"o Resultado é : R${resultado}")
-
-
+    numero_dolar = st.number_input("Insira um valor em Dólar para real")
+    resultado = numero_dolar * valor_real_para_dolar
+    st.write(f"O resultado é: R$ {resultado:}")
 
   elif moeda == "real":
-    numero_real = st.number_input("insira um valor em real PARA DOLAR")
-   
-    resultado = (numero real * valor_real)
-
-    st.write(f"o Resultado é : USD {resultado}")
-
+    numero_real = st.number_input("Insira um valor em Real para Dólar")
+    resultado = numero_real / valor_real_para_dolar
+    st.write(f"O resultado é: USD {resultado:}")
 
 
 
