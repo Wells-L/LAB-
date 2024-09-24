@@ -103,14 +103,14 @@ elif page == "testes2":
 
   content = my_resquest.content
   dados = json.loads(content)
-
-  dados['rates']["BRL"]
+  lista_moeda = list(dados['rates'].keys())
 
   col_1,col_2 = st.columns(2)
 
   with col_1:
 
-    st.write("testando coluna 1")
-    
+    moeda_1 = st.selectbox("Moeda 1", lista_moeda)
+    moeda_2 = st.selectbox("Moeda 2", lista_moeda)
+
   with col_2:
     st.write("testando coluna 2")
