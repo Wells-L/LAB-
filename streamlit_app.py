@@ -129,6 +129,6 @@ elif page == "testes2":
 
 elif page == "graficos":    
 
-  st.titlle("Graficos")
+  st.title("Graficos")
 
   
