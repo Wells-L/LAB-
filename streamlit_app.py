@@ -8,7 +8,7 @@ import requests
 import json
 import streamlit as st
 import pandas as pd 
-import plotly.express as px
+
 
 # side bar para selecao de paginas
 st.sidebar.title("menu do Lucas")
