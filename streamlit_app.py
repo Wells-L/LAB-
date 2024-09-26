@@ -4,10 +4,12 @@ import math as mt
 from math import sqrt
 import requests
 import json
+import pandas as pd 
+import plotly.express as px
 
 # side bar para selecao de paginas
 st.sidebar.title("menu do Lucas")
-page = st.sidebar.selectbox("escolha uma pagina",["Calculadora","Conversor","testes","testes2"])
+page = st.sidebar.selectbox("escolha uma pagina",["Calculadora","Conversor","testes","testes2","graficos"])
 
 if page == "Calculadora":
 
@@ -124,3 +126,9 @@ elif page == "testes2":
 
     valor_convertido = ( numero * conversao_moeda_2)/conversao_moeda_1
     st.write(f"O resultado é: {valor_convertido:.2f}")
+
+elif page = "graficos":    
+
+  st.titlle("Graficos")
+
+  
