@@ -131,4 +131,9 @@ elif page == "graficos":
 
   st.title("Graficos")
 
+  leads = "/content/leads_lucas-gabriel-peraro-wells_2024-09-05.xlsx"
+  df_leads = pd.read_excel(leads)
+
+  st.dataframe(df_leads)
+
   
