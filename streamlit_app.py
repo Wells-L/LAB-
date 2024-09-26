@@ -123,4 +123,4 @@ elif page == "testes2":
     st.write("testando coluna 2")
 
     valor_convertido = (valor_conversao * conversao_moeda_2)/conversao_moeda_1
-    st.write(f"O resultado é: {valor_convertido}"
+    st.write(f"O resultado é: {valor_convertido}")
