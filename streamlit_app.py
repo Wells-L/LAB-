@@ -112,8 +112,8 @@ elif page == "testes2":
     moeda_1 = st.selectbox("Moeda 1", lista_moeda)
     moeda_2 = st.selectbox("Moeda 2", lista_moeda)
 
-    conversão_moeda_1 = dados['rates'][moeda_1]
-    conversão_moeda_2 = dados['rates'][moeda_2]
+    conversao_moeda_1 = dados['rates'][moeda_1]
+    conversao_moeda_2 = dados['rates'][moeda_2]
 
 
     numero = st.number_input("digite um valor")
