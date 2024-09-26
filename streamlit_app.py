@@ -1,11 +1,14 @@
 
-import streamlit as st
-import math as mt
-from math import sqrt
+import os
+import shutil
+import subprocess
+import pandas as pd
+import os
 import requests
 import json
+import streamlit as st
 import pandas as pd 
-
+import plotly.express as px
 
 # side bar para selecao de paginas
 st.sidebar.title("menu do Lucas")
@@ -131,7 +134,7 @@ elif page == "graficos":
 
   st.title("Graficos")
 
-  leads = "leads.xlsx"
+  leads = 'leads.xlsx'
   df_leads = pd.read_excel(leads)
 
   st.dataframe(df_leads)
