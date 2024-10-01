@@ -7,7 +7,7 @@ import os
 import requests
 import json
 import streamlit as st
-import pandas as pd 
+import pandas as pd
 
 
 # side bar para selecao de paginas
@@ -123,14 +123,14 @@ elif page == "testes2":
 
     numero = st.number_input("digite um valor")
 
-    
+
   with col_2:
     st.write("Resultado")
 
     valor_convertido = ( numero * conversao_moeda_2)/conversao_moeda_1
     st.write(f"O resultado é: {valor_convertido:.2f}")
 
-elif page == "graficos":    
+elif page == "graficos":
 
   st.title("Graficos")
 
@@ -139,4 +139,3 @@ elif page == "graficos":
 
   st.dataframe(df_leads)
 
-  
