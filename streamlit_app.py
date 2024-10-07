@@ -139,5 +139,8 @@ elif page == "graficos":
 
   st.dataframe(df_leads)
 
-elif page == forca:  
+
+elif page == "forca":
+
+  st.title("bem vindo ao jogo da forca")  
 
