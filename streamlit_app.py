@@ -154,3 +154,5 @@ with open('/content/palavras.txt', 'r') as palavras_file:
     st.write(f"A palavra tem {len(palavra_secreta)} letras.")
     st.write(" ".join(palavra_chutada))
 
+    chute = st.text_input("Adivinha uma letra: ")
+
