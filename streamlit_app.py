@@ -12,7 +12,7 @@ import pandas as pd
 
 # side bar para selecao de paginas
 st.sidebar.title("menu do Lucas")
-page = st.sidebar.selectbox("escolha uma pagina",["Calculadora","Conversor","testes","testes2","graficos"])
+page = st.sidebar.selectbox("escolha uma pagina",["Calculadora","Conversor","testes","testes2","graficos","forca"])
 
 if page == "Calculadora":
 
@@ -138,4 +138,6 @@ elif page == "graficos":
   df_leads = pd.read_excel(leads)
 
   st.dataframe(df_leads)
+
+elif page == forca:  
 
