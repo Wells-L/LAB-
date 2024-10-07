@@ -142,8 +142,15 @@ elif page == "graficos":
 
 elif page == "forca":
 
-  st.title("bem vindo ao jogo da forca")  
+  lista_palavras = []
+with open('/content/palavras.txt', 'r') as palavras_file:
+    for line in palavras_file:
+        lista_palavras.append(line.strip())
+    
+    palavra_secreta = random.choice(lista_palavras)
+  
+    st.title("bem vindo ao jogo da forca")  
 
-  st.write(f"A palavra tem {len(st.session_state.palavra_secreta)} letras.")
-  st.write(" ".join(st.session_state.palavra_chutada))
+    st.write(f"A palavra tem {len(palavra_secreta)} letras.")
+    st.write(" ".join(palavra_chutada))
 
