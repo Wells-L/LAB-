@@ -144,3 +144,6 @@ elif page == "forca":
 
   st.title("bem vindo ao jogo da forca")  
 
+  st.write(f"A palavra tem {len(st.session_state.palavra_secreta)} letras.")
+  st.write(" ".join(st.session_state.palavra_chutada))
+
