@@ -146,14 +146,5 @@ elif page == "forca":
   with open('content/palavras.txt', 'r') as palavras_file:
       for line in palavras_file:
           lista_palavras.append(line.strip())
-
-      palavra_secreta = random.choice(lista_palavras)
-
-      st.title("bem vindo ao jogo da forca")
-
-      st.write(f"A palavra tem {len(palavra_secreta)} letras.")
-      st.write(" ".join(palavra_chutada))
-
-      chute = st.text_input("Adivinha uma letra: ")
-  
-      st.button("teste")
+  palavra_secreta = random.choice(lista_palavras)
+  st.write(palavra_secreta)     
