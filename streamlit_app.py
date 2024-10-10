@@ -141,6 +141,4 @@ elif page == "graficos":
 
 
 elif page == "forca":
-  
-
-      st.button("teste")
+  st.button("teste")
