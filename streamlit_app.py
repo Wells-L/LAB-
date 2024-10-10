@@ -141,7 +141,7 @@ elif page == "graficos":
 
 
 elif page == "forca":
-
+  import random
   lista_palavras = []
 with open('/content/palavras.txt', 'r') as palavras_file:
     for line in palavras_file:
