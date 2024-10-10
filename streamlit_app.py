@@ -18,7 +18,7 @@ if page == "Calculadora":
 
   #pagina de calculadora
   st.title("Calculadora")
-
+  st.write("teste")
   st.write("Faça a sua conta")
 
 
@@ -143,7 +143,7 @@ elif page == "graficos":
 elif page == "forca":
 
   lista_palavras = []
-with open('/content/palavras.txt','r') as palavras_file:
+with open('/content/palavras.txt', 'r') as palavras_file:
     for line in palavras_file:
         lista_palavras.append(line.strip())
 
