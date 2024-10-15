@@ -154,3 +154,10 @@ elif page == "forca":
 
   if st.button("teste"):
     st.write("Botão clicado!")
+
+  if "contador" not in st.sesion_state:
+    st.sesion_state["contador"] = 0
+
+  if st.button("somar"):
+    st.sesion_state["contador"] += 1
+  st.write(f"o seu contador é igual a: {st.sesion_state["contador"]}")
