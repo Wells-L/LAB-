@@ -161,3 +161,6 @@ elif page == "forca":
   if st.button("somar"):
     st.session_state["contador"] += 1
   st.write(f"o seu contador é igual a: {st.session_state["contador"]}")
+
+  if st.button("resetar"):
+    st.session_state["contador"] = 0
