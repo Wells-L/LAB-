@@ -145,6 +145,12 @@ elif page == "forca":
   lista_palavras = []
   with open('content/palavras.txt', 'r') as palavras_file:
       for line in palavras_file:
-          lista_palavras.append(line.strip())
+          lista_palavras.append(line.strip())]
+
+  
   palavra_secreta = random.choice(lista_palavras)
-  st.write(palavra_secreta)     
+  st.title("forca")
+  st.write(palavra_secreta)
+
+  if st.button("teste"):
+    st.write("Botão clicado!")
