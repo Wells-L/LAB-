@@ -17,7 +17,7 @@ calculadora = st.Page(
     icon="🧮",
 )
 
-forca = st.page(
+forca = st.Page(
     "view/forca.py",
     title="jogo da forca",
     icon="💀",
