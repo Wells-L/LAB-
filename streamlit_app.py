@@ -15,7 +15,7 @@ import plotly.express as px
 calculadora = st.Page(
     "view/calculadora.py",
     title="calculadora",
-    icon"🖩",
+    icon="🖩",
 )
 
 #configuracao da navegação 
