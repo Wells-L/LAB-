@@ -17,10 +17,18 @@ calculadora = st.Page(
     icon="🧮",
 )
 
+forca = st.page(
+    "view/forca.py",
+    title="jogo da forca",
+    icon="💀",
+)
+
+
 #configuracao da navegação 
 pg = st.navigation(
     {
         "parte1":[calculadora],
+        "item2":[forca]
     }
 )
 
