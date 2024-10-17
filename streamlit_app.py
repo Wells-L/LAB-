@@ -14,7 +14,7 @@ import pandas as pd
 calculadora = st.Page(
     "view/calculadora.py",
     title="calculadora",
-    icon="🖩",
+    icon="🧮",
 )
 
 #configuracao da navegação 
