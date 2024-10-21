@@ -1,7 +1,7 @@
-  
+
 import streamlit as st
 import math
-  
+
 st.title("Calculadora")
 st.write("teste")
 st.write("Faça a sua conta")
