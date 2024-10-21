@@ -39,7 +39,7 @@ graficos = st.Page(
 #configuracao da navegação
 pg = st.navigation(
     {
-        "parte1":[calculadora],[forca]
+        "parte1":[calculadora],[forca],
         "item2":
     }
 )
