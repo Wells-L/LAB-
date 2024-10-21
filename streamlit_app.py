@@ -23,12 +23,24 @@ forca = st.Page(
     icon="💀",
 )
 
+Conversor = st.Page(
+    "view/forca.py",
+    title="jogo da forca",
+    icon="💀",
+)
 
-#configuracao da navegação 
+graficos = st.Page(
+    "view/forca.py",
+    title="jogo da forca",
+    icon="💀",
+)
+
+
+#configuracao da navegação
 pg = st.navigation(
     {
-        "parte1":[calculadora],
-        "item2":[forca]
+        "parte1":[calculadora],[forca]
+        "item2":
     }
 )
 
