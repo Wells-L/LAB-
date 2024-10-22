@@ -12,18 +12,12 @@ with open('content/palavras.txt', 'r') as palavras_file:
 
 
 palavra_secreta = random.choice(lista_palavras)
-st.title("forca")
+
 st.write(palavra_secreta)
 
-if st.button("teste"):
-  st.write("Botão clicado!")
 
-if "contador" not in st.session_state:
-  st.session_state["contador"] = 0
+chute = st.text_input("Esolha uma letra: ")
 
-if st.button("somar"):
-  st.session_state["contador"] += 1
-st.write(f"o seu contador é igual a: {st.session_state["contador"]}")
+if st.button("chute: "):
+  st.writw(chute)
 
-if st.button("resetar"):
-  st.session_state["contador"] = 0
