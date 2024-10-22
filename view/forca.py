@@ -19,5 +19,5 @@ st.write(palavra_secreta)
 chute = st.text_input("Esolha uma letra: ")
 
 if st.button("chute: "):
-  st.writw(chute)
+  st.write(chute)
 
