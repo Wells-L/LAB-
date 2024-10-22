@@ -25,5 +25,6 @@ chute = st.text_input("Esolha uma letra: ")
 if st.button("chute: "):
   st.write(chute)
 
-
+if st.button("mudar palavra"):
+  st.session_state["palavra_secreta"] = random.choice(lista_palavras)
 
