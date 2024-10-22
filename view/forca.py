@@ -20,7 +20,7 @@ palavra_secreta = st.session_state["palavra_secreta"]
 st.write(palavra_secreta)
 
 letras_chutada = ["_" for letra in palavra_secreta]
-st.write("-".join(letras_chutada))
+st.title("-".join(letras_chutada))
 
 chute = st.text_input("Esolha uma letra: ")
 
