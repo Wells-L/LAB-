@@ -2,7 +2,7 @@
 import random
 import streamlit as st
 
-st.title("forca")
+st.title("forca2")
 
 
 lista_palavras = []
