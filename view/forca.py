@@ -19,6 +19,8 @@ palavra_secreta = st.session_state["palavra_secreta"]
 
 st.write(palavra_secreta)
 
+letras_chutada = ["_" for letra in palavra_secreta]
+st.write(letras_chutada)
 
 chute = st.text_input("Esolha uma letra: ")
 
@@ -28,3 +30,5 @@ if st.button("chute: "):
 if st.button("mudar palavra"):
   st.session_state["palavra_secreta"] = random.choice(lista_palavras)
   st.balloons()
+
+
