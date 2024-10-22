@@ -33,9 +33,9 @@ if st.button("chute: "):
   
   for index, letra in enumerate(palavra_secreta):
     if chute == letra:
-      letras_chutada [index] = letra
+      st.session_state["letras_chutada"] [index] = letra
 
-      st.write(" ".join(letras_chutada))
+      st.write("acrtou")
     else:
       st.write("essa letra nao esta na palavra")
      
