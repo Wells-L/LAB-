@@ -11,7 +11,7 @@ df_leads = pd.read_excel(leads)
 st.write("dataframe")
 st.dataframe(df_leads)
 
-df_leads["dia da entrada"] = pd.to_datetime(df_leads["Dia de entrada"])
+df_leads["dia de entrada"] = pd.to_datetime(df_leads["Dia de entrada"])
 df_leads["dia"] = df_leads["dia de entrada"].dt.day
 
 groupby_leads_por_dia = df_leads.groupby("dia").agg({"ID do lead": "nunique}"}).reset_index()
