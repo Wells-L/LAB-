@@ -29,15 +29,18 @@ st.title(" ".join(letras_chutada))
 
 chute = st.text_input("Esolha uma letra: ")
 
-if st.button("chute: "):
+acertou = False
+
+if st.button("chutar"):
 
   for index, letra in enumerate(palavra_secreta):
     if chute == letra:
       st.session_state["letras_chutada"] [index] = letra
+    
 
-      st.write("acrtou")
-    else:
-      st.write("essa letra nao esta na palavra")
+      st.write("acertou")
+  else:
+    st.write("essa letra nao esta na palavra")
 
 
 
