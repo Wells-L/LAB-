@@ -29,6 +29,12 @@ conversor = st.Page(
     icon="🪙",
 )
 
+graficos = st.Page(
+    "view/graficos.py",
+    title="gráficos",
+    icon="📊",
+)
+
 #configuracao da navegação
 pg = st.navigation(
     {
