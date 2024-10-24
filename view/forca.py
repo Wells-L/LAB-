@@ -2,7 +2,7 @@
 import random
 import streamlit as st
 
-st.title("forca2")
+st.title("forca")
 
 
 lista_palavras = []
@@ -30,7 +30,7 @@ st.title(" ".join(letras_chutada))
 chute = st.text_input("Esolha uma letra: ")
 
 if st.button("chute: "):
-  
+
   for index, letra in enumerate(palavra_secreta):
     if chute == letra:
       st.session_state["letras_chutada"] [index] = letra
@@ -38,7 +38,7 @@ if st.button("chute: "):
       st.write("acrtou")
     else:
       st.write("essa letra nao esta na palavra")
-     
+
 
 
 if st.button("mudar palavra"):
