@@ -8,6 +8,7 @@ import requests
 import json
 import streamlit as st
 import pandas as pd
+import plotly.express as px
 
 #configuracao da pagina
 
