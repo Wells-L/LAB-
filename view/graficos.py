@@ -20,9 +20,9 @@ st.write("graficos de leads por dia")
 
 grafico_leads_por_dia = px.line(
     groupby_leads_por_dia,
-    x="",
-    y="",
-    labels={"ID do dia": "Quantia de Leads", "Dia":"Dia do mês"},
+    x="Dia",
+    y="ID do lead",
+    labels={"ID do lead": "Quantia de Leads", "Dia":"Dia do mês"},
     markers=True
 )
 
