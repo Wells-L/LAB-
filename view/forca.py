@@ -2,9 +2,9 @@
 import random
 import streamlit as st
 
-st.title("forca_teste6")
+st.title("FORCA")
 
-
+# escolhendo palavra 
 lista_palavras = []
 with open('content/palavras.txt', 'r') as palavras_file:
     for line in palavras_file:
@@ -90,4 +90,7 @@ if st.button("mudar palavra"):
 
   st.rerun()
 
-
+# mostrar quantidade de tentativas 
+#colocar função do enter 
+#colocar dificuldades 
+#identacao
