@@ -2,7 +2,7 @@
 import random
 import streamlit as st
 
-st.title("forca")
+st.title("forca_teste1")
 
 
 lista_palavras = []
@@ -27,22 +27,35 @@ else:
 letras_chutada = st.session_state["letras_chutada"]
 st.title(" ".join(letras_chutada))
 
-chute = st.text_input("Esolha uma letra: ")
+chute = st.text_input("Escolha uma letra: ")
 
 acertou = False
+acertos = 0
+tentativa = len(palavra_secreta)
+# trazer as variasveis todas abaixo do click do botão
+ # declarar palavras chutadas e armazenar os acertos e tentativas
+
 
 if st.button("chutar"):
 
   for index, letra in enumerate(palavra_secreta):
     if chute == letra:
-      st.session_state["letras_chutada"] [index] = letra
-     
+      letras_chutada[index] = letra
       acertou = True
-  else:
-    acertou = False
-    st.write("essa letra nao esta na palavra")
+      acertos += 1 
+    else:
+      st.write("essa letra nao esta na palavra")
+      tentativa - 1
 
+  if acertos == len(palavra_secreta):
 
+      print("Parabens voce ganhou")
+
+  if tentativas == 0:
+    print(f"voce perdeu a palavra era: {palavra_secreta}")
+    break
+  
+ st.session_state["letras_chutada"] = letras_chutada
 
 if st.button("mudar palavra"):
   st.session_state["palavra_secreta"] = random.choice(lista_palavras)
