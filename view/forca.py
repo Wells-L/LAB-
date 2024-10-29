@@ -2,7 +2,7 @@
 import random
 import streamlit as st
 
-st.title("forca_teste1")
+st.title("forca_teste2")
 
 
 lista_palavras = []
@@ -63,5 +63,7 @@ if st.button("mudar palavra"):
   st.session_state["letras_chutada"] = ["_" for letra in palavra_secreta]
 
   st.balloons()
+
+  st.rerun()
 
 
