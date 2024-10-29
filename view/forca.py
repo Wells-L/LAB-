@@ -42,7 +42,7 @@ if "acertos" in st.session_state:
 else:
   st.session_state["acertos"] = 0
 acertos = st.session_state["acertos"]
-
+st.write(f"acertos :{acertos}")
 if "tentativas" in st.session_state:
   pass
 else:
