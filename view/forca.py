@@ -2,7 +2,7 @@
 import random
 import streamlit as st
 
-st.title("forca_teste5")
+st.title("forca_teste6")
 
 
 lista_palavras = []
@@ -41,7 +41,7 @@ if "acertos" in st.session_state:
   pass
 else:
   st.session_state["acertos"] = 0
-acertos =  st.session_state["acertos"]
+acertos = st.session_state["acertos"]
 
 if "tentativas" in st.session_state:
   pass
@@ -73,18 +73,20 @@ if acertou == False:
 if acertos == len(palavra_secreta):
 
   st.write("Parabens voce ganhou")
-
+  st.balloons()
 if tentativas == 0:
   st.write(f"voce perdeu a palavra era: {palavra_secreta}")
 
 st.session_state["letras_chutada"] = letras_chutada
 
 if st.button("mudar palavra"):
+
   st.session_state["palavra_secreta"] = random.choice(lista_palavras)
   palavra_secreta = st.session_state["palavra_secreta"]
   st.session_state["letras_chutada"] = ["_" for letra in palavra_secreta]
+  st.session_state["acertou"] = 0
+  st.session_state["tentativas"] = len(palavra_secreta)
 
-  st.balloons()
 
   st.rerun()
 
