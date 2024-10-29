@@ -2,7 +2,7 @@
 import random
 import streamlit as st
 
-st.title("forca_teste3")
+st.title("forca_teste")
 
 
 lista_palavras = []
@@ -29,12 +29,25 @@ st.title(" ".join(letras_chutada))
 
 chute = st.text_input("Escolha uma letra: ")
 
-acertou = False
-acertos = 0
-tentativas = len(palavra_secreta)
 # trazer as variasveis todas abaixo do click do botão
  # declarar palavras chutadas e armazenar os acertos e tentativas
+if "acertou" in st.session_state:
+  pass
+else:
+  st.session_state["acertou"] = False
+acertou =  st.session_state["acertou"]
 
+if "acertos" in st.session_state:
+  pass
+else:
+  st.session_state["acertos"] = 0
+acertos =  st.session_state["acertos"]
+
+if "tentativas" in st.session_state:
+  pass
+else:
+  st.session_state["tentativas"] = len(palavra_secreta)
+tentativas =  st.session_state["tentativas"]
 
 if st.button("chutar"):
   st.write(palavra_secreta) 
@@ -46,16 +59,22 @@ if st.button("chutar"):
     else:
       
       tentativas - 1
-  if acertou == False:
-    st.write("essa letra nao esta na palavra")
-  if acertos == len(palavra_secreta):
+  st.session_state["acertos"] = acertos
+  st.session_state["acertou"] = acertou
+  st.session_state["tentativas"] = tentativas
 
-    st.write("Parabens voce ganhou")
-
-  if tentativas == 0:
-    st.write(f"voce perdeu a palavra era: {palavra_secreta}")
   st.rerun()
   
+if acertou == False:
+  st.write("essa letra nao esta na palavra")
+
+if acertos == len(palavra_secreta):
+
+  st.write("Parabens voce ganhou")
+
+if tentativas == 0:
+  st.write(f"voce perdeu a palavra era: {palavra_secreta}")
+
 st.session_state["letras_chutada"] = letras_chutada
 
 if st.button("mudar palavra"):
