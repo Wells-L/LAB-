@@ -2,7 +2,7 @@
 import random
 import streamlit as st
 
-st.title("forca_teste2")
+st.title("forca_teste3")
 
 
 lista_palavras = []
@@ -44,16 +44,17 @@ if st.button("chutar"):
       acertou = True
       acertos += 1 
     else:
-      st.write("essa letra nao esta na palavra")
+      
       tentativas - 1
-
+  if acertou == False:
+    st.write("essa letra nao esta na palavra")
   if acertos == len(palavra_secreta):
 
     st.write("Parabens voce ganhou")
 
   if tentativas == 0:
     st.write(f"voce perdeu a palavra era: {palavra_secreta}")
- 
+  st.rerun()
   
 st.session_state["letras_chutada"] = letras_chutada
 
