@@ -55,7 +55,7 @@ if st.button("chutar"):
     print(f"voce perdeu a palavra era: {palavra_secreta}")
     break
   
- st.session_state["letras_chutada"] = letras_chutada
+st.session_state["letras_chutada"] = letras_chutada
 
 if st.button("mudar palavra"):
   st.session_state["palavra_secreta"] = random.choice(lista_palavras)
