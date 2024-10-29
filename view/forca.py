@@ -49,11 +49,11 @@ if st.button("chutar"):
 
   if acertos == len(palavra_secreta):
 
-      print("Parabens voce ganhou")
+    st.write("Parabens voce ganhou")
 
   if tentativas == 0:
-    print(f"voce perdeu a palavra era: {palavra_secreta}")
-    break
+    st.write(f"voce perdeu a palavra era: {palavra_secreta}")
+ 
   
 st.session_state["letras_chutada"] = letras_chutada
 
