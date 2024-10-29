@@ -17,7 +17,7 @@ else:
 
 palavra_secreta = st.session_state["palavra_secreta"]
 
-st.write(palavra_secreta)
+#st.write("palavra_secreta")
 
 if "letras_chutada" in st.session_state:
   pass
