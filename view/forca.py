@@ -1,7 +1,9 @@
 
+#imports
 import random
 import streamlit as st
 
+#título 
 st.title("FORCA")
 
 # escolhendo palavra 
@@ -17,7 +19,7 @@ else:
 
 palavra_secreta = st.session_state["palavra_secreta"]
 
-#st.write("palavra_secreta")
+#colocando as letras chutadas
 
 if "letras_chutada" in st.session_state:
   pass
@@ -27,10 +29,11 @@ else:
 letras_chutada = st.session_state["letras_chutada"]
 st.title(" ".join(letras_chutada))
 
+# chute
 chute = st.text_input("Escolha uma letra: ")
 
-# trazer as variasveis todas abaixo do click do botão
- # declarar palavras chutadas e armazenar os acertos e tentativas
+#contador de acertos e tentativas
+
 if "acertou" in st.session_state:
   pass
 else:
@@ -48,6 +51,19 @@ if "tentativas" in st.session_state:
 else:
   st.session_state["tentativas"] = len(palavra_secreta)
 tentativas =  st.session_state["tentativas"]
+
+#dificuldade
+
+dificuldade = st.select.box("Escolha o nível de dificuldade:", ("Fácil", "Médio", "Difícil"))
+if dificuldade == "Fácil":
+    tentativas_totais = len(palavra_secreta) + 3
+elif dificuldade == "Médio":
+    tentativas_totais = len(palavra_secreta)
+elif dificuldade == "Difícil":
+    tentativas_totais = len(palavra_secreta) - 2
+
+
+#lógica 
 
 if st.button("chutar"):
   st.write(palavra_secreta) 
