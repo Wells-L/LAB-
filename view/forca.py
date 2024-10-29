@@ -31,13 +31,13 @@ chute = st.text_input("Escolha uma letra: ")
 
 acertou = False
 acertos = 0
-tentativa = len(palavra_secreta)
+tentativas = len(palavra_secreta)
 # trazer as variasveis todas abaixo do click do botão
  # declarar palavras chutadas e armazenar os acertos e tentativas
 
 
 if st.button("chutar"):
-
+  st.write(palavra_secreta) 
   for index, letra in enumerate(palavra_secreta):
     if chute == letra:
       letras_chutada[index] = letra
@@ -45,7 +45,7 @@ if st.button("chutar"):
       acertos += 1 
     else:
       st.write("essa letra nao esta na palavra")
-      tentativa - 1
+      tentativas - 1
 
   if acertos == len(palavra_secreta):
 
