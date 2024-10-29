@@ -84,7 +84,7 @@ if st.button("mudar palavra"):
   st.session_state["palavra_secreta"] = random.choice(lista_palavras)
   palavra_secreta = st.session_state["palavra_secreta"]
   st.session_state["letras_chutada"] = ["_" for letra in palavra_secreta]
-  st.session_state["acertou"] = 0
+  st.session_state["acertos"] = 0
   st.session_state["tentativas"] = len(palavra_secreta)
 
 
