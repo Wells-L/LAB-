@@ -73,7 +73,6 @@ if st.button("chutar"):
       acertou = True
       acertos += 1
   if not acertou:
-    acertou == False
     tentativas -= 1
     st.write("esta letra não esta na palavra")
     st.write(f"voce possui mais {tentativas} tentativas ")
