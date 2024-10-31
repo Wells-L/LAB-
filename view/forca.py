@@ -66,7 +66,6 @@ st.write(tentativas_totais)
 #lógica
 
 if st.button("chutar"):
-  st.write(palavra_secreta)
   acertou = False
   for index, letra in enumerate(palavra_secreta):
     if chute == letra:
