@@ -72,11 +72,11 @@ if st.button("chutar"):
       letras_chutada[index] = letra
       acertou = True
       acertos += 1
-    else:
-      acertou == False
-      tentativas -= 1
-      st.write("esta letra não esta na palavra")
-      st.write(f"voce possui mais {tentativas} tentativas ")
+  if not acertou:
+    acertou == False
+    tentativas -= 1
+    st.write("esta letra não esta na palavra")
+    st.write(f"voce possui mais {tentativas} tentativas ")
      
   
   st.session_state["letras_chutada"] = letras_chutada
