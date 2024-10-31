@@ -75,7 +75,7 @@ if st.button("chutar"):
       acertos += 1
     else:
 
-      tentativas_totais -= 1
+      tentativas -= 1
 
   st.session_state["acertos"] = acertos
   st.session_state["acertou"] = acertou
@@ -85,7 +85,7 @@ if st.button("chutar"):
 
 if acertou == False:
   st.write("essa letra nao esta na palavra")
-
+  st.write(f"voce possui mais {tentativas} tentativas ")
 if acertos == len(palavra_secreta):
 
   st.write("Parabens voce ganhou")
