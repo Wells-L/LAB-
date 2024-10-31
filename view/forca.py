@@ -18,7 +18,7 @@ else:
   st.session_state["palavra_secreta"] = random.choice(lista_palavras)
 
 palavra_secreta = st.session_state["palavra_secreta"]
-
+st.write(palavra_secreta)
 #colocando as letras chutadas
 
 if "letras_chutada" in st.session_state:
@@ -102,10 +102,10 @@ if st.button("mudar palavra"):
   st.session_state["letras_chutada"] = ["_" for letra in palavra_secreta]
   st.session_state["acertos"] = 0
   st.session_state["tentativas"] = len(palavra_secreta)
-
+  
 
   st.rerun()
-
+st.write(tentativas_totais)
 # mostrar quantidade de tentativas
 #colocar função do enter
 #colocar dificuldades
