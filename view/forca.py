@@ -4,7 +4,7 @@ import random
 import streamlit as st
 
 #título
-st.title("FORCA")
+st.title("FORCA1")
 
 # escolhendo palavra
 lista_palavras = []
