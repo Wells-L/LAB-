@@ -62,7 +62,7 @@ elif dificuldade == "Médio":
 elif dificuldade == "Difícil":
     tentativas_totais = len(palavra_secreta) - 2
 
-
+st.write(tentativas_totais)
 #lógica
 
 if st.button("chutar"):
