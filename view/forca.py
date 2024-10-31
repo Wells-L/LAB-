@@ -3,10 +3,10 @@
 import random
 import streamlit as st
 
-#título 
+#título
 st.title("FORCA")
 
-# escolhendo palavra 
+# escolhendo palavra
 lista_palavras = []
 with open('content/palavras.txt', 'r') as palavras_file:
     for line in palavras_file:
@@ -54,7 +54,7 @@ tentativas =  st.session_state["tentativas"]
 
 #dificuldade
 
-dificuldade = st.select.box("Escolha o nível de dificuldade:", ("Fácil", "Médio", "Difícil"))
+dificuldade = st.sidebar.selectbox("Escolha o nível de dificuldade:", ("Fácil", "Médio", "Difícil"))
 if dificuldade == "Fácil":
     tentativas_totais = len(palavra_secreta) + 3
 elif dificuldade == "Médio":
@@ -63,26 +63,26 @@ elif dificuldade == "Difícil":
     tentativas_totais = len(palavra_secreta) - 2
 
 
-#lógica 
+#lógica
 
 if st.button("chutar"):
-  st.write(palavra_secreta) 
+  st.write(palavra_secreta)
   acertou = False
   for index, letra in enumerate(palavra_secreta):
     if chute == letra:
       letras_chutada[index] = letra
       acertou = True
-      acertos += 1 
+      acertos += 1
     else:
-      
-      tentativas - 1 
+
+      tentativas - 1
 
   st.session_state["acertos"] = acertos
   st.session_state["acertou"] = acertou
   st.session_state["tentativas"] = tentativas
 
   st.rerun()
-  
+
 if acertou == False:
   st.write("essa letra nao esta na palavra")
 
@@ -106,7 +106,7 @@ if st.button("mudar palavra"):
 
   st.rerun()
 
-# mostrar quantidade de tentativas 
-#colocar função do enter 
-#colocar dificuldades 
+# mostrar quantidade de tentativas
+#colocar função do enter
+#colocar dificuldades
 #identacao
