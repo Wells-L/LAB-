@@ -54,7 +54,7 @@ tentativas =  st.session_state["tentativas"]
 
 #dificuldade
 
-dificuldade = st.sidebar.selectbox("Escolha o nível de dificuldade:", ("Fácil", "Médio", "Difícil"))
+dificuldade = st.selectbox("Escolha o nível de dificuldade:", ("Fácil", "Médio", "Difícil"))
 if dificuldade == "Fácil":
     tentativas_totais = len(palavra_secreta) + 3
 elif dificuldade == "Médio":
