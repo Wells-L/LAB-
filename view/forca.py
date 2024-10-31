@@ -4,7 +4,7 @@ import random
 import streamlit as st
 
 #título
-st.title("FORCA1")
+st.title("FORCA")
 
 # escolhendo palavra
 lista_palavras = []
@@ -18,7 +18,7 @@ else:
   st.session_state["palavra_secreta"] = random.choice(lista_palavras)
 
 palavra_secreta = st.session_state["palavra_secreta"]
-st.write(palavra_secreta)
+
 #colocando as letras chutadas
 
 if "letras_chutada" in st.session_state:
@@ -54,7 +54,7 @@ tentativas =  st.session_state["tentativas"]
 
 #dificuldade
 
-dificuldade = st.selectbox("Escolha o nível de dificuldade:", ("Fácil", "Médio", "Difícil"))
+dificuldade = st.select.box("Escolha o nível de dificuldade:", ("Fácil", "Médio", "Difícil"))
 if dificuldade == "Fácil":
     tentativas_totais = len(palavra_secreta) + 3
 elif dificuldade == "Médio":
@@ -62,38 +62,39 @@ elif dificuldade == "Médio":
 elif dificuldade == "Difícil":
     tentativas_totais = len(palavra_secreta) - 2
 
-st.write(tentativas_totais)
+
 #lógica
 
 if st.button("chutar"):
+  st.write(palavra_secreta)
   acertou = False
   for index, letra in enumerate(palavra_secreta):
     if chute == letra:
       letras_chutada[index] = letra
       acertou = True
       acertos += 1
-  if not acertou:
-    tentativas -= 1
-    st.write("esta letra não esta na palavra")
-    st.write(f"voce possui mais {tentativas} tentativas ")
-     
-  
-  st.session_state["letras_chutada"] = letras_chutada
+    else:
+
+      tentativas - 1
+
   st.session_state["acertos"] = acertos
   st.session_state["acertou"] = acertou
   st.session_state["tentativas"] = tentativas
 
   st.rerun()
 
-#ganhou
+if acertou == False:
+  st.write("essa letra nao esta na palavra")
+
 if acertos == len(palavra_secreta):
+
   st.write("Parabens voce ganhou")
   st.balloons()
-#perdeu
 if tentativas == 0:
   st.write(f"voce perdeu a palavra era: {palavra_secreta}")
 
-#mudar a palavra
+st.session_state["letras_chutada"] = letras_chutada
+
 if st.button("mudar palavra"):
 
   st.session_state["palavra_secreta"] = random.choice(lista_palavras)
@@ -101,10 +102,10 @@ if st.button("mudar palavra"):
   st.session_state["letras_chutada"] = ["_" for letra in palavra_secreta]
   st.session_state["acertos"] = 0
   st.session_state["tentativas"] = len(palavra_secreta)
-  
+
 
   st.rerun()
-st.write(tentativas_totais)
+
 # mostrar quantidade de tentativas
 #colocar função do enter
 #colocar dificuldades
