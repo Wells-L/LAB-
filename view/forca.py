@@ -86,16 +86,15 @@ if st.button("chutar"):
 
   st.rerun()
 
-
+#ganhou
 if acertos == len(palavra_secreta):
-
   st.write("Parabens voce ganhou")
   st.balloons()
+#perdeu
 if tentativas == 0:
   st.write(f"voce perdeu a palavra era: {palavra_secreta}")
 
-st.session_state["letras_chutada"] = letras_chutada
-
+#mudar a palavra
 if st.button("mudar palavra"):
 
   st.session_state["palavra_secreta"] = random.choice(lista_palavras)
