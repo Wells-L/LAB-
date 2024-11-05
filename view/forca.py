@@ -102,7 +102,7 @@ if st.button("mudar palavra"):
   palavra_secreta = st.session_state["palavra_secreta"]
   st.session_state["letras_chutada"] = ["_" for letra in palavra_secreta]
   st.session_state["acertos"] = 0
-  st.session_state["tentativas"] = len(palavra_secreta)
+  st.session_state["tentativas"] = tentativas_totais
 
 
   st.rerun()
