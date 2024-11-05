@@ -4,7 +4,7 @@ import random
 import streamlit as st
 
 #título
-st.title("FORCA3")
+st.title("FORCA4")
 
 # escolhendo palavra
 lista_palavras = []
@@ -103,7 +103,7 @@ if st.button("mudar palavra"):
   st.session_state["letras_chutada"] = ["_" for letra in palavra_secreta]
   st.session_state["acertos"] = 0
   st.session_state["tentativas"] = tentativas_totais
-  acertou = True
+  st.session_state["acertou"] = True
 
   st.rerun()
 
