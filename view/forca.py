@@ -4,7 +4,7 @@ import random
 import streamlit as st
 
 #título
-st.title("FORCA2")
+st.title("FORCA3")
 
 # escolhendo palavra
 lista_palavras = []
@@ -64,6 +64,7 @@ else:
 tentativas =  st.session_state["tentativas"]
 
 #lógica
+st.write(tentativas_totais)
 
 if st.button("chutar"):
   st.write(palavra_secreta)
