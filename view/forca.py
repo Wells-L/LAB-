@@ -2,6 +2,14 @@
 #imports
 import random
 import streamlit as st
+import unicodedata
+
+def remove_acentos(input_str):
+    # Normalize the string to decompose accent characters
+    nfkd_form = unicodedata.normalize('NFKD', input_str)
+    # Filter out combining characters (accents) by keeping only ASCII characters
+    return ''.join([c for c in nfkd_form if not unicodedata.combining(c)])
+
 
 #título
 st.title("FORCA4")
@@ -15,8 +23,7 @@ with open('content/palavras.txt', 'r') as palavras_file:
 if "palavra_secreta" in st.session_state:
   pass
 else:
-  st.session_state["palavra_secreta"] = random.choice(lista_palavras)
-
+  st.session_state["palavra_secreta"] = remove_acentos(random.choice(lista_palavras))
 palavra_secreta = st.session_state["palavra_secreta"]
 
 #colocando as letras chutadas
@@ -29,7 +36,8 @@ else:
 letras_chutada = st.session_state["letras_chutada"]
 st.title(" ".join(letras_chutada))
 
-#dificuldade
+
+
 
 
 
@@ -96,7 +104,7 @@ def dificuldade():
     dificuldade = st.selectbox("Escolha o nível de dificuldade:", ("Fácil", "Médio", "Difícil")) 
     if st.button("Submit"):
 
-        st.session_state["palavra_secreta"] = random.choice(lista_palavras)
+        st.session_state["palavra_secreta"] = remove_acentos(random.choice(lista_palavras))
         palavra_secreta = st.session_state["palavra_secreta"]
         st.session_state["letras_chutada"] = ["_" for letra in palavra_secreta]
         st.session_state["acertos"] = 0
