@@ -31,13 +31,7 @@ st.title(" ".join(letras_chutada))
 
 #dificuldade
 
-dificuldade = st.selectbox("Escolha o nível de dificuldade:", ("Fácil", "Médio", "Difícil"))
-if dificuldade == "Fácil":
-    tentativas_totais = len(palavra_secreta) + 3
-elif dificuldade == "Médio":
-    tentativas_totais = len(palavra_secreta)
-elif dificuldade == "Difícil":
-    tentativas_totais = len(palavra_secreta) - 2
+
 
 st.write(palavra_secreta)
 # chute
@@ -96,24 +90,32 @@ if tentativas == 0:
 
 st.session_state["letras_chutada"] = letras_chutada
 
+@st.dialog("selecione sua dificuldade")
+def dificuldade():
+    st.write(f"selecione a sua dificuldade")
+    dificuldade = st.selectbox("Escolha o nível de dificuldade:", ("Fácil", "Médio", "Difícil")) 
+    if st.button("Submit"):
+
+        st.session_state["palavra_secreta"] = random.choice(lista_palavras)
+        palavra_secreta = st.session_state["palavra_secreta"]
+        st.session_state["letras_chutada"] = ["_" for letra in palavra_secreta]
+        st.session_state["acertos"] = 0
+
+        if dificuldade == "Fácil":
+            tentativas_totais = len(palavra_secreta) + 3
+        elif dificuldade == "Médio":
+            tentativas_totais = len(palavra_secreta)
+        elif dificuldade == "Difícil":
+            tentativas_totais = len(palavra_secreta) - 2
+
+        st.session_state["tentativas"] = tentativas_totais
+        st.session_state["acertou"] = True
+
+        st.rerun()
+
 if st.button("mudar palavra"):
 
-  st.session_state["palavra_secreta"] = random.choice(lista_palavras)
-  palavra_secreta = st.session_state["palavra_secreta"]
-  st.session_state["letras_chutada"] = ["_" for letra in palavra_secreta]
-  st.session_state["acertos"] = 0
-
-  if dificuldade == "Fácil":
-      tentativas_totais = len(palavra_secreta) + 3
-  elif dificuldade == "Médio":
-      tentativas_totais = len(palavra_secreta)
-  elif dificuldade == "Difícil":
-      tentativas_totais = len(palavra_secreta) - 2
-
-  st.session_state["tentativas"] = tentativas_totais
-  st.session_state["acertou"] = True
-
-  st.rerun()
+  dificuldade()
 
 #arrumar tentativas
 #colocar função do enter
