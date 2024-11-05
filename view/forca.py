@@ -2,13 +2,8 @@
 #imports
 import random
 import streamlit as st
-import unicodedata
+from unidecode import unidecode
 
-def remove_acentos(input_str):
-    # Normalize the string to decompose accent characters
-    nfkd_form = unicodedata.normalize('NFKD', input_str)
-    # Filter out combining characters (accents) by keeping only ASCII characters
-    return ''.join([c for c in nfkd_form if not unicodedata.combining(c)])
 
 
 #título
@@ -23,7 +18,7 @@ with open('content/palavras.txt', 'r') as palavras_file:
 if "palavra_secreta" in st.session_state:
   pass
 else:
-  st.session_state["palavra_secreta"] = remove_acentos(random.choice(lista_palavras))
+  st.session_state["palavra_secreta"] = unidecode(random.choice(lista_palavras))
 palavra_secreta = st.session_state["palavra_secreta"]
 
 #colocando as letras chutadas
@@ -86,15 +81,15 @@ if st.button("chutar"):
   st.rerun()
 
 if acertou == False:
-  st.write("essa letra nao esta na palavra")
-  st.write(f"voce possui mais {tentativas} tentativas restantes")
+  st.write("essa letra não esta na palavra")
+  st.write(f"você possui mais {tentativas} tentativas restantes")
 
 if acertos == len(palavra_secreta):
 
-  st.write("Parabens voce ganhou")
+  st.write("Parabens você ganhou")
   st.balloons()
 if tentativas == 0:
-  st.write(f"voce perdeu a palavra era: {palavra_secreta}")
+  st.write(f"você perdeu a palavra era: {palavra_secreta}")
 
 st.session_state["letras_chutada"] = letras_chutada
 
@@ -104,7 +99,7 @@ def dificuldade():
     dificuldade = st.selectbox("Escolha o nível de dificuldade:", ("Fácil", "Médio", "Difícil")) 
     if st.button("Submit"):
 
-        st.session_state["palavra_secreta"] = remove_acentos(random.choice(lista_palavras))
+        st.session_state["palavra_secreta"] = unidecode(random.choice(lista_palavras))
         palavra_secreta = st.session_state["palavra_secreta"]
         st.session_state["letras_chutada"] = ["_" for letra in palavra_secreta]
         st.session_state["acertos"] = 0
