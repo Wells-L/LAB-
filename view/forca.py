@@ -74,7 +74,7 @@ if st.button("chutar"):
       letras_chutada[index] = letra
       acertou = True
       acertos += 1
-  else:
+  if acertou == False:
     tentativas -= 1
 
   st.session_state["acertos"] = acertos
