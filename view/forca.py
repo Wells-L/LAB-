@@ -75,7 +75,7 @@ if st.button("chutar"):
       acertos += 1
     else:
 
-      tentativas - 1
+      tentativas -= 1
 
   st.session_state["acertos"] = acertos
   st.session_state["acertou"] = acertou
