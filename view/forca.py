@@ -64,7 +64,7 @@ else:
 tentativas =  st.session_state["tentativas"]
 
 #lógica
-st.write(tentativas_totais)
+st.write(tentativas)
 
 if st.button("chutar"):
   st.write(palavra_secreta)
