@@ -4,7 +4,7 @@ import random
 import streamlit as st
 
 #título
-st.title("FORCA")
+st.title("FORCA2")
 
 # escolhendo palavra
 lista_palavras = []
@@ -39,7 +39,7 @@ elif dificuldade == "Médio":
 elif dificuldade == "Difícil":
     tentativas_totais = len(palavra_secreta) - 2
 
-
+st.write(palavra_secreta)
 # chute
 chute = st.text_input("Escolha uma letra: ")
 
@@ -85,6 +85,7 @@ if st.button("chutar"):
 
 if acertou == False:
   st.write("essa letra nao esta na palavra")
+  st.write(f"voce possui mais {tentativas} tentativas restantes")
 
 if acertos == len(palavra_secreta):
 
