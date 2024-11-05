@@ -57,7 +57,7 @@ acertos = st.session_state["acertos"]
 if "tentativas" in st.session_state:
   pass
 else:
-  st.session_state["tentativas"] = tentativas_totais
+  st.session_state["tentativas"] = len(palavra_secreta)
 tentativas =  st.session_state["tentativas"]
 
 #lógica
