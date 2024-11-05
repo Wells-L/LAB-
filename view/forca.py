@@ -29,6 +29,17 @@ else:
 letras_chutada = st.session_state["letras_chutada"]
 st.title(" ".join(letras_chutada))
 
+#dificuldade
+
+dificuldade = st.selectbox("Escolha o nível de dificuldade:", ("Fácil", "Médio", "Difícil"))
+if dificuldade == "Fácil":
+    tentativas_totais = len(palavra_secreta) + 3
+elif dificuldade == "Médio":
+    tentativas_totais = len(palavra_secreta)
+elif dificuldade == "Difícil":
+    tentativas_totais = len(palavra_secreta) - 2
+
+
 # chute
 chute = st.text_input("Escolha uma letra: ")
 
@@ -51,17 +62,6 @@ if "tentativas" in st.session_state:
 else:
   st.session_state["tentativas"] = len(palavra_secreta)
 tentativas =  st.session_state["tentativas"]
-
-#dificuldade
-
-dificuldade = st.selectbox("Escolha o nível de dificuldade:", ("Fácil", "Médio", "Difícil"))
-if dificuldade == "Fácil":
-    tentativas_totais = len(palavra_secreta) + 3
-elif dificuldade == "Médio":
-    tentativas_totais = len(palavra_secreta)
-elif dificuldade == "Difícil":
-    tentativas_totais = len(palavra_secreta) - 2
-
 
 #lógica
 
