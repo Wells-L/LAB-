@@ -60,7 +60,7 @@ acertos = st.session_state["acertos"]
 if "tentativas" in st.session_state:
   pass
 else:
-  st.session_state["tentativas"] = len(palavra_secreta)
+  st.session_state["tentativas"] = tentativas_totais
 tentativas =  st.session_state["tentativas"]
 
 #lógica
@@ -73,9 +73,8 @@ if st.button("chutar"):
       letras_chutada[index] = letra
       acertou = True
       acertos += 1
-    else:
-
-      tentativas -= 1
+  else:
+    tentativas -= 1
 
   st.session_state["acertos"] = acertos
   st.session_state["acertou"] = acertou
@@ -107,7 +106,5 @@ if st.button("mudar palavra"):
 
   st.rerun()
 
-# mostrar quantidade de tentativas
+#arrumar tentativas
 #colocar função do enter
-#colocar dificuldades
-#identacao
