@@ -43,10 +43,10 @@ groupby_leads_por_unidade = (
 
 grafico_leads_por_unidade = px.bar(
     groupby_leads_por_dia,
-    x="Dia",
+    x="Unidade",
     y="ID do lead",
-    labels={"ID do lead": "Quantia de Leads", "Dia":"Dia do mês"},
-    markers=True
+    labels={"ID do lead": "Quantia de Leads", "Unidade":"Unidade"},
+    
 )
 
 st.plotly_chart(grafico_leads_por_unidade)
