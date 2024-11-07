@@ -67,12 +67,12 @@ col3,col4 = st.columns(2)
 #groupby 4 c
 with col3 :
 
-   groupby_leads_por_unidade = (
-    df_leads
-    .groupby("Fonte")                  
-    .agg({"ID do lead": "nunique"})
-    .reset_index()
-  )  
+  groupby_leads_por_unidade = (
+  df_leads
+  .groupby("Fonte")                  
+  .agg({"ID do lead": "nunique"})
+  .reset_index()
+)  
    #grafico
 
 
