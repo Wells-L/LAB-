@@ -36,7 +36,7 @@ st.plotly_chart(grafico_leads_por_dia)
 groupby_leads_por_unidade = (
   df_leads
   .groupby("Unidade")                  
-  agg({"ID do lead": "nunique"})
+  .agg({"ID do lead": "nunique"})
   .reset_index()
 )  
 
