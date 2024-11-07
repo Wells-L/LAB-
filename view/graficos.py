@@ -84,3 +84,23 @@ with col3 :
     labels={"ID do lead": "Quantia de Leads", "Fonte":"Fonte"},
 )   
   st.plotly_chart(grafico_leads_por_fonte)
+
+with col4 :
+
+   groupby_leads_por_Status = (
+  df_leads
+  .groupby("Status")                  
+  .agg({"ID do lead": "nunique"})
+  .reset_index()
+)  
+  
+
+
+  grafico_leads_por_Status = px.pie(
+    groupby_leads_por_Status,
+    names="Status",
+    values="ID do lead",
+    title = "número de leads por fonte",
+    labels={"ID do lead": "Quantia de Leads", "Status":"Status"},
+)   
+  st.plotly_chart(grafico_leads_por_fonte)
