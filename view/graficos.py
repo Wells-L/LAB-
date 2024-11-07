@@ -2,9 +2,9 @@
 import pandas as pd
 import plotly.express as px
 import streamlit as st
-
+#parte 1 
 st.title("graficos")
-
+#parte 2
 leads = "leads.xlsx"
 df_leads = pd.read_excel(leads)
 
@@ -27,3 +27,30 @@ grafico_leads_por_dia = px.line(
 )
 
 st.plotly_chart(grafico_leads_por_dia)
+
+#################################################
+#grafico de barras
+
+
+
+groupby_leads_por_dia = (df_leads.groupby("Dia").agg({"ID do lead": "nunique"}).reset_index()
+  df_lead
+  .groupby("Unidade")                  
+  agg({"ID do lead": "nunique"})
+  .reset_index()
+)  
+
+
+grafico_leads_por_unidade = px.bar(
+    groupby_leads_por_dia,
+    x="Dia",
+    y="ID do lead",
+    labels={"ID do lead": "Quantia de Leads", "Dia":"Dia do mês"},
+    markers=True
+)
+
+st.plotly_chart(grafico_leads_por_unidade)
+
+
+
+st write("grafico por unidade")
