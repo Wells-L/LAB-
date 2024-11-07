@@ -77,9 +77,10 @@ with col3 :
 
 
   grafico_leads_por_fonte = px.pie(
-      groupby_leads_por_unidade,
-      x="Fonte",
-      y="ID do lead",
-      title = "numero de leads por fonyte"
+      groupby_leads_por_fonte,
+      names="Fonte",
+      values="ID do lead",
+      title = "numero de leads por fonte"
       labels={"ID do lead": "Quantia de Leads", "Fonte":"Fonte"},
       
+  st.plotly_chart(grafico_leads_por_fonte)
