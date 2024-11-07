@@ -76,7 +76,7 @@ with col3 :
    #grafico
 
 
-  grafico_leads_por_fontee = px.bar(
+  grafico_leads_por_fonte = px.pie(
       groupby_leads_por_unidade,
       x="Fonte",
       y="ID do lead",
