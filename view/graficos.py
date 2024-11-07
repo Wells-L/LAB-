@@ -59,3 +59,27 @@ with col2 :
 
 
   st.write("grafico por unidade")
+
+
+##############################################################
+
+col3,col4 = st.columns(2)
+#groupby 4 c
+with col3 :
+
+   groupby_leads_por_unidade = (
+    df_leads
+    .groupby("Fonte")                  
+    .agg({"ID do lead": "nunique"})
+    .reset_index()
+  )  
+   #grafico
+
+
+  grafico_leads_por_fontee = px.bar(
+      groupby_leads_por_unidade,
+      x="Fonte",
+      y="ID do lead",
+      title = "numero de leads por fonyte"
+      labels={"ID do lead": "Quantia de Leads", "Fonte":"Fonte"},
+      
