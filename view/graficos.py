@@ -7,7 +7,7 @@ st.title("graficos")
 #parte 2
 leads = "leads.xlsx"
 df_leads = pd.read_excel(leads)
-
+#parte 3
 st.write("dataframe")
 st.dataframe(df_leads)
 
@@ -33,8 +33,8 @@ st.plotly_chart(grafico_leads_por_dia)
 
 
 
-groupby_leads_por_dia = (df_leads.groupby("Dia").agg({"ID do lead": "nunique"}).reset_index()
-  df_lead
+groupby_leads_por_unidade = (
+  df_leads
   .groupby("Unidade")                  
   agg({"ID do lead": "nunique"})
   .reset_index()
