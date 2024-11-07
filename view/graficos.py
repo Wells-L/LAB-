@@ -42,7 +42,7 @@ groupby_leads_por_unidade = (
 
 
 grafico_leads_por_unidade = px.bar(
-    groupby_leads_por_dia,
+    groupby_leads_por_unidade,
     x="Unidade",
     y="ID do lead",
     labels={"ID do lead": "Quantia de Leads", "Unidade":"Unidade"},
