@@ -109,7 +109,7 @@ if acertou == False:
   st.write(f"você possui mais {tentativas} tentativas restantes")
 
 if verificar_chute == True:
-  st.write("esta letra ja esta na palavra, por favor tente outra")
+  st.write("voce ja tentou esta letra, por favor tente outra")
 
 
 if acertos == len(palavra_secreta):
@@ -119,7 +119,7 @@ if acertos == len(palavra_secreta):
 if tentativas == 0:
   st.write(f"você perdeu a palavra era: {palavra_secreta}")
 
-st.write(", ".join(letras_tentadas))
+st.write(f"essas sao as suas letras tentadas"{", ".join(letras_tentadas)}")
 
 st.session_state["letras_chutada"] = letras_chutada
 
