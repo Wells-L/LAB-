@@ -7,7 +7,7 @@ from unidecode import unidecode
 
 
 #título
-st.title("FORCA1")
+st.title("FORCA2")
 
 # escolhendo palavra
 lista_palavras = []
