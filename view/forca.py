@@ -71,15 +71,16 @@ st.write(tentativas)
 
 if st.button("chutar"):
   letras_tentadas.append(chute)
-  st.write(palavra_secreta)
   acertou = False
   for index, letra in enumerate(palavra_secreta):
     if chute == letra:
       letras_chutada[index] = letra
       acertou = True
-      acertos += 1
+          
   if acertou == False:
     tentativas -= 1
+  else:
+    acertos += 1
 
   st.write(f"Letras tentadas: {', '.join(letras_tentadas)}")
 
