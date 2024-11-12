@@ -116,6 +116,8 @@ if acertos == len(palavra_secreta):
 
   st.write("Parabens você ganhou")
   st.balloons()
+  acertos = 0 
+  st.session_state["acertos"] = acertos
 if tentativas == 0:
   st.write(f"você perdeu a palavra era: {palavra_secreta}")
 
@@ -149,8 +151,7 @@ def dificuldade():
 
 if st.button("mudar palavra"):
   acertos = 0 
-  acertos = st.session_state["acertos"]
-  st.session_state["acertos"] = 0
+  st.session_state["acertos"] = acertos
   dificuldade()
 
 
