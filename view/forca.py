@@ -144,7 +144,7 @@ def dificuldade():
 
         st.session_state["tentativas"] = tentativas_totais
         st.session_state["acertou"] = True
-
+        st.session_state["acertos"] = 0
         st.rerun()
 
 if st.button("mudar palavra"):
