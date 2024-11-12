@@ -7,7 +7,7 @@ from unidecode import unidecode
 
 
 #título
-st.title("FORCA4")
+st.title("FORCA")
 
 # escolhendo palavra
 lista_palavras = []
@@ -32,9 +32,14 @@ letras_chutada = st.session_state["letras_chutada"]
 st.title(" ".join(letras_chutada))
 
 
+if "letras_tentadas" in st.session_state:
+  pass
+else:
+  st.session_state["letras tentadas"] = []
+  letras_tentadas = st.session_state["letras_tentadas"]
 
-
-
+  st.write(f"Letras tentadas: {', '.join(letras_tentadas)}")
+  
 
 st.write(palavra_secreta)
 # chute
@@ -96,7 +101,7 @@ st.session_state["letras_chutada"] = letras_chutada
 @st.dialog("selecione sua dificuldade")
 def dificuldade():
     st.write(f"selecione a sua dificuldade")
-    dificuldade = st.selectbox("Escolha o nível de dificuldade:", ("Fácil", "Médio", "Difícil")) 
+    dificuldade = st.selectbox("Escolha o nível de dificuldade:", ("Fácil", "Médio", "Difícil"))
     if st.button("Submit"):
 
         st.session_state["palavra_secreta"] = unidecode(random.choice(lista_palavras))
@@ -120,5 +125,4 @@ if st.button("mudar palavra"):
 
   dificuldade()
 
-#arrumar tentativas
-#colocar função do enter
+
