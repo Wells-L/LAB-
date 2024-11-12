@@ -89,7 +89,7 @@ if st.button("chutar"):
   st.session_state["tentativas"] = tentativas
   st.session_state["letras_tentadas"] = letras_tentadas
   st.rerun()
-
+# mensagens
 if acertou == False:
   st.write("essa letra não esta na palavra")
   st.write(f"você possui mais {tentativas} tentativas restantes")
@@ -100,6 +100,8 @@ if acertos == len(palavra_secreta):
   st.balloons()
 if tentativas == 0:
   st.write(f"você perdeu a palavra era: {palavra_secreta}")
+
+st.write(", ".join(letras_tentadas))
 
 st.session_state["letras_chutada"] = letras_chutada
 
