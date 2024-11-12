@@ -66,20 +66,30 @@ else:
   st.session_state["tentativas"] = len(palavra_secreta)
 tentativas =  st.session_state["tentativas"]
 
+if "verificar_chute" in st.session_state:
+  pass
+else:
+  st.session_state["verificar_chute"] = False
+  verificar_chute = st.session_state["verificar_chute"]
+
+
 #lógica
 st.write(tentativas)
 
 if st.button("chutar"):
   if chute in letras_tentadas:
-    st.write("essa letra ja foi tentada, por vefor tente outra")
+    verificar_chute = True
+
   else:
     letras_tentadas.append(chute)
     acertou = False
+    verificar_chute = False
     for index, letra in enumerate(palavra_secreta):
       if chute == letra:
         letras_chutada[index] = letra
         acertou = True
         acertos += 1
+  
 
     if acertou == False:
       tentativas -= 1
@@ -90,12 +100,17 @@ if st.button("chutar"):
   st.session_state["acertos"] = acertos
   st.session_state["acertou"] = acertou
   st.session_state["tentativas"] = tentativas
+  st.session_state["verificar_chute"] = verificar_chute 
   st.session_state["letras_tentadas"] = letras_tentadas
   st.rerun()
 # mensagens
 if acertou == False:
   st.write("essa letra não esta na palavra")
   st.write(f"você possui mais {tentativas} tentativas restantes")
+
+if verificar_chute == True
+  st.write("esta letra ja esta na palavra, por favor tente outra")
+
 
 if acertos == len(palavra_secreta):
 
