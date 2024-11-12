@@ -39,7 +39,7 @@ else:
   letras_tentadas = st.session_state["letras_tentadas"]
 
   st.write(f"Letras tentadas: {', '.join(letras_tentadas)}")
-  
+
 
 st.write(palavra_secreta)
 # chute
@@ -82,7 +82,7 @@ if st.button("chutar"):
   st.session_state["acertos"] = acertos
   st.session_state["acertou"] = acertou
   st.session_state["tentativas"] = tentativas
-
+  st.session_state["letras_tentadas"] = letras_tentadas
   st.rerun()
 
 if acertou == False:
@@ -108,8 +108,9 @@ def dificuldade():
         palavra_secreta = st.session_state["palavra_secreta"]
         st.session_state["letras_chutada"] = ["_" for letra in palavra_secreta]
         st.session_state["acertos"] = 0
+        st.session_state["letras_tentadas"] = []
 
-        if dificuldade == "Fácil":
+        if dificuldade == "Fácil": 
             tentativas_totais = len(palavra_secreta) + 3
         elif dificuldade == "Médio":
             tentativas_totais = len(palavra_secreta)
