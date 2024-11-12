@@ -69,6 +69,7 @@ tentativas =  st.session_state["tentativas"]
 st.write(tentativas)
 
 if st.button("chutar"):
+  letras_tentadas.append(chute)
   st.write(palavra_secreta)
   acertou = False
   for index, letra in enumerate(palavra_secreta):
