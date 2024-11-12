@@ -119,7 +119,7 @@ if acertos == len(palavra_secreta):
 if tentativas == 0:
   st.write(f"você perdeu a palavra era: {palavra_secreta}")
 
-st.write(f"essas sao as suas letras tentadas"{", ".join(letras_tentadas)}")
+st.write(f"essas sao as suas letras tentadas{", ".join(letras_tentadas)}")
 
 st.session_state["letras_chutada"] = letras_chutada
 
