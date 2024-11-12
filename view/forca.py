@@ -7,7 +7,7 @@ from unidecode import unidecode
 
 
 #título
-st.title("FORCA2")
+st.title("FORCA3")
 
 # escolhendo palavra
 lista_palavras = []
@@ -148,7 +148,9 @@ def dificuldade():
         st.rerun()
 
 if st.button("mudar palavra"):
-
+  acertos = 0 
+  acertos = st.session_state["acertos"]
+  st.session_state["acertos"] = 0
   dificuldade()
 
 
