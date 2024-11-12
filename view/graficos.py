@@ -103,4 +103,4 @@ with col4 :
     title = "número de leads por fonte",
     labels={"ID do lead": "Quantia de Leads", "Status":"Status"},
 )
-  st.plotly_chart(grafico_leads_por_fonte)
+  st.plotly_chart(grafico_leads_por_Status)
