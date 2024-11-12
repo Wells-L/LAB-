@@ -76,11 +76,11 @@ if st.button("chutar"):
     if chute == letra:
       letras_chutada[index] = letra
       acertou = True
-          
+      acertos += 1
+
   if acertou == False:
     tentativas -= 1
-  else:
-    acertos += 1
+
 
   st.write(f"Letras tentadas: {', '.join(letras_tentadas)}")
 
