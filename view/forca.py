@@ -35,10 +35,10 @@ st.title(" ".join(letras_chutada))
 if "letras_tentadas" in st.session_state:
   pass
 else:
-  st.session_state["letras tentadas"] = []
+  st.session_state["letras_tentadas"] = []
   letras_tentadas = st.session_state["letras_tentadas"]
 
-  st.write(f"Letras tentadas: {', '.join(letras_tentadas)}")
+
 
 
 st.write(palavra_secreta)
@@ -79,6 +79,8 @@ if st.button("chutar"):
       acertos += 1
   if acertou == False:
     tentativas -= 1
+
+  st.write(f"Letras tentadas: {', '.join(letras_tentadas)}")
 
   st.session_state["acertos"] = acertos
   st.session_state["acertou"] = acertou
