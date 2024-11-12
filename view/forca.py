@@ -7,7 +7,7 @@ from unidecode import unidecode
 
 
 #título
-st.title("FORCA")
+st.title("FORCA1")
 
 # escolhendo palavra
 lista_palavras = []
@@ -33,10 +33,11 @@ st.title(" ".join(letras_chutada))
 
 
 if "letras_tentadas" in st.session_state:
+
   pass
 else:
   st.session_state["letras_tentadas"] = []
-  letras_tentadas = st.session_state["letras_tentadas"]
+letras_tentadas = st.session_state["letras_tentadas"]
 
 
 
