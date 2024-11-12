@@ -108,7 +108,7 @@ if acertou == False:
   st.write("essa letra não esta na palavra")
   st.write(f"você possui mais {tentativas} tentativas restantes")
 
-if verificar_chute == True
+if verificar_chute == True:
   st.write("esta letra ja esta na palavra, por favor tente outra")
 
 
