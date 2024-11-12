@@ -70,7 +70,7 @@ if "verificar_chute" in st.session_state:
   pass
 else:
   st.session_state["verificar_chute"] = False
-  verificar_chute = st.session_state["verificar_chute"]
+verificar_chute = st.session_state["verificar_chute"]
 
 
 #lógica
