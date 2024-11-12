@@ -2,7 +2,7 @@
 import pandas as pd
 import plotly.express as px
 import streamlit as st
-#parte 1 
+#parte 1
 st.title("graficos")
 #parte 2
 leads = "leads.xlsx"
@@ -40,10 +40,10 @@ with col2 :
 
   groupby_leads_por_unidade = (
     df_leads
-    .groupby("Unidade")                  
+    .groupby("Unidade")
     .agg({"ID do lead": "nunique"})
     .reset_index()
-  )  
+  )
 
 
   grafico_leads_por_unidade = px.bar(
@@ -51,7 +51,7 @@ with col2 :
       x="Unidade",
       y="ID do lead",
       labels={"ID do lead": "Quantia de Leads", "Unidade":"Unidade"},
-      
+
   )
 
   st.plotly_chart(grafico_leads_por_unidade)
@@ -69,10 +69,10 @@ with col3 :
 
   groupby_leads_por_fonte = (
   df_leads
-  .groupby("Fonte")                  
+  .groupby("Fonte")
   .agg({"ID do lead": "nunique"})
   .reset_index()
-)  
+)
    #grafico
 
 
@@ -82,18 +82,18 @@ with col3 :
     values="ID do lead",
     title = "número de leads por fonte",
     labels={"ID do lead": "Quantia de Leads", "Fonte":"Fonte"},
-)   
+)
   st.plotly_chart(grafico_leads_por_fonte)
 
 with col4 :
 
-   groupby_leads_por_Status = (
+  groupby_leads_por_Status = (
   df_leads
-  .groupby("Status")                  
+  .groupby("Status")
   .agg({"ID do lead": "nunique"})
   .reset_index()
-)  
-  
+)
+
 
 
   grafico_leads_por_Status = px.pie(
@@ -102,5 +102,5 @@ with col4 :
     values="ID do lead",
     title = "número de leads por fonte",
     labels={"ID do lead": "Quantia de Leads", "Status":"Status"},
-)   
+)
   st.plotly_chart(grafico_leads_por_fonte)
