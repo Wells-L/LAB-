@@ -70,16 +70,19 @@ tentativas =  st.session_state["tentativas"]
 st.write(tentativas)
 
 if st.button("chutar"):
-  letras_tentadas.append(chute)
-  acertou = False
-  for index, letra in enumerate(palavra_secreta):
-    if chute == letra:
-      letras_chutada[index] = letra
-      acertou = True
-      acertos += 1
+  if chute in letras_tentadas:
+    st.write("essa letra ja foi tentada, por vefor tente outra")
+  else:
+    letras_tentadas.append(chute)
+    acertou = False
+    for index, letra in enumerate(palavra_secreta):
+      if chute == letra:
+        letras_chutada[index] = letra
+        acertou = True
+        acertos += 1
 
-  if acertou == False:
-    tentativas -= 1
+    if acertou == False:
+      tentativas -= 1
 
 
   st.write(f"Letras tentadas: {', '.join(letras_tentadas)}")
