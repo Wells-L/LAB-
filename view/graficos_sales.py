@@ -23,7 +23,7 @@ df_sales["Dia"] = df_sales["Data venda"].dt.day
 
 #parte4 groupby vendas por dia
 
-groupby_vendas_por_dia = (
+groupby_vendas_por_dia = px.bar(
     df_sales
     .groupby("Dia")
     .agg({"Valor líquido": "sum"})
