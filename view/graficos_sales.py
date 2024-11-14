@@ -10,6 +10,15 @@ st.title("sales1")
 sales = "sales.xlsx"
 df_sales = pd.read_excel(sales)
 
+
+
+#parte 3 a
+
+df_sales["Data venda"] = pd.to_datetime(df_sales["Data venda"])
+
+#isolanado o doa do campo"data venda
+df_sales["Dia"] = df_sales["Dia da entrada"].dt.day
+
 #parte2
-st.write("mostrando o frontrend")
+st.write("mostrando o frontend")
 st.dataframe(df_sales)
