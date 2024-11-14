@@ -23,12 +23,22 @@ df_sales["Dia"] = df_sales["Data venda"].dt.day
 
 #parte4 groupby vendas por dia
 
-groupby_vendas_por_dia = px.bar(
+groupby_vendas_por_dia = (
     df_sales
     .groupby("Dia")
     .agg({"Valor líquido": "sum"})
     .reset_index()
   )
+
+grafico_vendas_por_dia = px.bar(
+      groupby_vendas_por_dia,
+      x="Dia",
+      y="Valor líquido",
+      labels={"Valor líquido": "Valor", "Dia":"Dia"},
+
+  )
+
+st.plotly_chart(grafico_vendas_por_dia)
 
 st.write("mostrando vendas por dia ")
 st.dataframe(groupby_vendas_por_dia)
