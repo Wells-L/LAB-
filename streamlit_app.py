@@ -47,4 +47,10 @@ pg = st.navigation(
     }
 )
 
+graficos_sales = st.Page(
+    "view/graficos_sales.py",
+    title="Sales",
+    icon="💸",
+)
+
 pg.run()
