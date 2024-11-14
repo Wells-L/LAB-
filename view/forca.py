@@ -2,12 +2,9 @@
 #imports
 import random
 import streamlit as st
-from unidecode import unidecode
-
-
 
 #título
-st.title("FORCA3")
+st.title("FORCA")
 
 # escolhendo palavra
 lista_palavras = []
@@ -18,7 +15,8 @@ with open('content/palavras.txt', 'r') as palavras_file:
 if "palavra_secreta" in st.session_state:
   pass
 else:
-  st.session_state["palavra_secreta"] = unidecode(random.choice(lista_palavras))
+  st.session_state["palavra_secreta"] = random.choice(lista_palavras)
+
 palavra_secreta = st.session_state["palavra_secreta"]
 
 #colocando as letras chutadas
@@ -31,18 +29,6 @@ else:
 letras_chutada = st.session_state["letras_chutada"]
 st.title(" ".join(letras_chutada))
 
-
-if "letras_tentadas" in st.session_state:
-
-  pass
-else:
-  st.session_state["letras_tentadas"] = []
-letras_tentadas = st.session_state["letras_tentadas"]
-
-
-
-
-st.write(palavra_secreta)
 # chute
 chute = st.text_input("Escolha uma letra: ")
 
@@ -66,92 +52,61 @@ else:
   st.session_state["tentativas"] = len(palavra_secreta)
 tentativas =  st.session_state["tentativas"]
 
-if "verificar_chute" in st.session_state:
-  pass
-else:
-  st.session_state["verificar_chute"] = False
-verificar_chute = st.session_state["verificar_chute"]
+#dificuldade
+
+dificuldade = st.select.box("Escolha o nível de dificuldade:", ("Fácil", "Médio", "Difícil"))
+if dificuldade == "Fácil":
+    tentativas_totais = len(palavra_secreta) + 3
+elif dificuldade == "Médio":
+    tentativas_totais = len(palavra_secreta)
+elif dificuldade == "Difícil":
+    tentativas_totais = len(palavra_secreta) - 2
 
 
 #lógica
-st.write(tentativas)
 
 if st.button("chutar"):
-  if chute in letras_tentadas:
-    verificar_chute = True
+  st.write(palavra_secreta)
+  acertou = False
+  for index, letra in enumerate(palavra_secreta):
+    if chute == letra:
+      letras_chutada[index] = letra
+      acertou = True
+      acertos += 1
+    else:
 
-  else:
-    letras_tentadas.append(chute)
-    acertou = False
-    verificar_chute = False
-    for index, letra in enumerate(palavra_secreta):
-      if chute == letra:
-        letras_chutada[index] = letra
-        acertou = True
-        acertos += 1
-  
-
-    if acertou == False:
-      tentativas -= 1
-
-
-  st.write(f"Letras tentadas: {', '.join(letras_tentadas)}")
+      tentativas - 1
 
   st.session_state["acertos"] = acertos
   st.session_state["acertou"] = acertou
   st.session_state["tentativas"] = tentativas
-  st.session_state["verificar_chute"] = verificar_chute 
-  st.session_state["letras_tentadas"] = letras_tentadas
+
   st.rerun()
-# mensagens
+
 if acertou == False:
-  st.write("essa letra não esta na palavra")
-  st.write(f"você possui mais {tentativas} tentativas restantes")
-
-if verificar_chute == True:
-  st.write("voce ja tentou esta letra, por favor tente outra")
-
+  st.write("essa letra nao esta na palavra")
 
 if acertos == len(palavra_secreta):
 
-  st.write("Parabens você ganhou")
+  st.write("Parabens voce ganhou")
   st.balloons()
-  acertos = 0 
-  st.session_state["acertos"] = acertos
 if tentativas == 0:
-  st.write(f"você perdeu a palavra era: {palavra_secreta}")
-
-st.write(f"essas sao as suas letras tentadas: {", ".join(letras_tentadas)}")
+  st.write(f"voce perdeu a palavra era: {palavra_secreta}")
 
 st.session_state["letras_chutada"] = letras_chutada
 
-@st.dialog("selecione sua dificuldade")
-def dificuldade():
-    st.write(f"selecione a sua dificuldade")
-    dificuldade = st.selectbox("Escolha o nível de dificuldade:", ("Fácil", "Médio", "Difícil"))
-    if st.button("Submit"):
-
-        st.session_state["palavra_secreta"] = unidecode(random.choice(lista_palavras))
-        palavra_secreta = st.session_state["palavra_secreta"]
-        st.session_state["letras_chutada"] = ["_" for letra in palavra_secreta]
-        st.session_state["acertos"] = 0
-        st.session_state["letras_tentadas"] = []
-
-        if dificuldade == "Fácil": 
-            tentativas_totais = len(palavra_secreta) + 3
-        elif dificuldade == "Médio":
-            tentativas_totais = len(palavra_secreta)
-        elif dificuldade == "Difícil":
-            tentativas_totais = len(palavra_secreta) - 2
-
-        st.session_state["tentativas"] = tentativas_totais
-        st.session_state["acertou"] = True
-        st.session_state["acertos"] = 0
-        st.rerun()
-
 if st.button("mudar palavra"):
-  acertos = 0 
-  st.session_state["acertos"] = acertos
-  dificuldade()
+
+  st.session_state["palavra_secreta"] = random.choice(lista_palavras)
+  palavra_secreta = st.session_state["palavra_secreta"]
+  st.session_state["letras_chutada"] = ["_" for letra in palavra_secreta]
+  st.session_state["acertos"] = 0
+  st.session_state["tentativas"] = len(palavra_secreta)
 
 
+  st.rerun()
+
+# mostrar quantidade de tentativas
+#colocar função do enter
+#colocar dificuldades
+#identacao
