@@ -36,6 +36,12 @@ graficos = st.Page(
     icon="📊",
 )
 
+graficos_sales = st.Page(
+    "view/graficos_sales.py",
+    title="Sales",
+    icon="💸",
+)
+
 #configuracao da navegação
 pg = st.navigation(
     {
@@ -45,12 +51,6 @@ pg = st.navigation(
         "item4":[graficos]
 
     }
-)
-
-graficos_sales = st.Page(
-    "views/graficos_sales.py",
-    title="Sales",
-    icon="💸",
 )
 
 pg.run()
