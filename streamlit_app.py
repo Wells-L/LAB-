@@ -48,7 +48,7 @@ pg = st.navigation(
         "parte 1":[calculadora],
         "item 2":[forca],
         "item 3":[conversor],
-        "item4":[graficos]
+        "item4":[graficos,graficos_sales]
 
     }
 )
