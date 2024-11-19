@@ -16,7 +16,7 @@ st.dataframe(df_sales)
 
 #parte 3 a
 
-df_sales["Data venda"] = pd.to_datetime(df_sales["Data venda"])
+df_sales["Data venda"] = (df_sales["Data venda"])
 
 #isolanado o doa do campo"data venda
 df_sales["Dia"] = df_sales["Data venda"].dt.day
@@ -42,3 +42,13 @@ st.plotly_chart(grafico_vendas_por_dia)
 
 st.write("mostrando vendas por dia ")
 st.dataframe(groupby_vendas_por_dia)
+
+#parte5
+
+grafico_vendas_dia_loja = (
+    .df_sales
+    .groupby("Dia,Unidade")
+    .agg({"Valor líquido": "sum"})
+    .reset_index()
+  )
+
