@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 
-st.title("sales1")
+st.title("sales2")
 
 #parte1
 
