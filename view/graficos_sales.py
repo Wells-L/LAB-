@@ -46,7 +46,7 @@ st.dataframe(groupby_vendas_por_dia)
 #parte5
 
 grafico_vendas_dia_loja = (
-    .df_sales
+    df_sales
     .groupby("Dia,Unidade")
     .agg({"Valor líquido": "sum"})
     .reset_index()
