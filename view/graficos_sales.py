@@ -16,7 +16,7 @@ st.dataframe(df_sales)
 
 #parte 3 a
 
-df_sales["Data venda"] = (df_sales["Data venda"])
+#df_sales["Data venda"] = pd.to_datetime(df_sales["Data venda"])
 
 #isolanado o doa do campo"data venda
 df_sales["Dia"] = df_sales["Data venda"].dt.day
