@@ -15,7 +15,7 @@ st.write("Dados de venda")
 st.dataframe(df_sales)
 
 #parte 3 a
-("receita por dia")
+st.title("receita por dia")
 df_sales["Data venda"] = pd.to_datetime(df_sales["Data venda"])
 
 #isolanado o doa do campo"data venda
