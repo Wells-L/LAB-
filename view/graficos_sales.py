@@ -52,6 +52,7 @@ grafico_vendas_dia_loja = (
     .reset_index()
   )
 
+st.plotly_chart(grafico_vendas_dia_loja)
 
 #profissao que mais compra
 #consultor que mais vendeu
