@@ -66,16 +66,16 @@ st.plotly_chart(grafico_vendas_dia_loja)
 
 grafico_profissao_compra = (
     df_sales
-    .groupby("Profissão Cliente")
+    .groupby("Profissão cliente")
     .agg({"Valor líquido": "sum"})
     .reset_index()
   )
 
 grafico_profissao_compra = px.bar(
       grafico_profissao_compra,
-      x="Profissão Cliente",
+      x="Profissão cliente",
       y="Valor líquido",
-      labels={"Valor líquido":"Valor","Profissão Cliente":"Profissão"}
+      labels={"Valor líquido":"Valor","Profissão cliente":"Profissão"}
 )
       
 st.plotly_chart(grafico_profissao_compra)
