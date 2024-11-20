@@ -96,8 +96,8 @@ grafico_Consultor_vendas = (
       .reset_index()
 )
 
-grafico_consultor_vendas = px.bar(
-      grafico_consultor_vendas,
+grafico_Consultor_vendas = px.bar(
+      grafico_Consultor_vendas,
       x="Consultor",
       y="Valor líquido",
       labels={"Valor líquido":"Valor","Consultor":"Consultor"}
