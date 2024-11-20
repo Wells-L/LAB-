@@ -100,7 +100,7 @@ grafico_consultor_vendas = px.bar(
       grafico_consultor_vendas,
       x="Consultor",
       y="Valor líquido",
-      labels={"Valor líquido":"Valor","Consultrr":"Consultor"}
+      labels={"Valor líquido":"Valor","Consultor":"Consultor"}
 )
 
 st.plotly_chart(grafico_Consultor_vendas)
