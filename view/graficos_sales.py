@@ -21,7 +21,7 @@ df_sales["Data venda"] = pd.to_datetime(df_sales["Data venda"])
 #isolanado o doa do campo"data venda
 df_sales["Dia"] = df_sales["Data venda"].dt.day
 
-#parte4 groupby vendas por dia
+#groupby vendas por dia
 
 groupby_vendas_por_dia = (
     df_sales
@@ -43,7 +43,7 @@ st.plotly_chart(grafico_vendas_por_dia)
 st.write("mostrando vendas por dia ")
 st.dataframe(groupby_vendas_por_dia)
 
-#parte5
+#vendas por dia de cada loja
 
 grafico_vendas_dia_loja = (
     df_sales
@@ -62,6 +62,25 @@ grafico_vendas_dia_loja = px.bar(
 
 st.plotly_chart(grafico_vendas_dia_loja)
 
-#profissao que mais compra
+#profissoes que mais compram
+
+grafico_profissao_compra = (
+    df_sales
+    .groupby("Profissão Cliente")
+    .agg({"Valor líquido": "sum"})
+    .reset_index()
+  )
+
+grafico_profissao_compra = px.bar(
+      grafico_profissao_compra
+      x="Profissão Cliente",
+      y="Valor líquido"
+      labels{"Valor líquido":"Valor","Profissão Cliente":"Profissão"}
+)
+      
+st.plotly_chart(grafico_profissao_compra)
+
+
+
 #consultor que mais vendeu
 #procedimento que mais vendi
