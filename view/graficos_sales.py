@@ -45,6 +45,9 @@ st.dataframe(groupby_vendas_por_dia)
 
 #vendas por dia de cada loja
 
+st.title("vendas por dia de cada loja")
+
+
 grafico_vendas_dia_loja = (
     df_sales
     .groupby(["Dia", "Unidade"])
@@ -63,6 +66,8 @@ grafico_vendas_dia_loja = px.bar(
 st.plotly_chart(grafico_vendas_dia_loja)
 
 #profissoes que mais compram
+
+st.title("profissões que mais compram")
 
 grafico_profissao_compra = (
     df_sales
