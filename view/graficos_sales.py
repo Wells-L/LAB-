@@ -52,13 +52,14 @@ grafico_vendas_dia_loja = (
     .reset_index()
   )
 
-grafico = px.bar(
-    grafico_vendas_dia_loja,
-    x="Dia",
-    y="Valor líquido",
-    color="Unidade",
-    title="Vendas por Dia e Unidade"
+grafico_vendas_dia_loja = px.bar(
+      grafico_vendas_dia_loja,
+      x="Dia",
+      y="Valor líquido",
+      color="Unidade",
+      title="Vendas por Dia de cada Loja"
 )
+
 st.plotly_chart(grafico_vendas_dia_loja)
 
 #profissao que mais compra
