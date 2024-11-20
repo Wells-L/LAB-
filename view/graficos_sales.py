@@ -89,7 +89,7 @@ st.plotly_chart(grafico_profissao_compra)
 
 st.title("Consultor que mais vendeu")
 
-grafico_Consultorr_vendas = (
+grafico_Consultor_vendas = (
     df_sales
     .groupby("Consultor")
     .agg({"Valor líquido": "sum"})
