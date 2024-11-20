@@ -60,7 +60,7 @@ grafico_vendas_dia_loja = px.bar(
       x="Dia",
       y="Valor líquido",
       color="Unidade",
-      title="Vendas por Dia de cada Loja"
+    
 )
 
 st.plotly_chart(grafico_vendas_dia_loja)
