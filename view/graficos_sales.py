@@ -74,8 +74,8 @@ grafico_profissao_compra = (
 grafico_profissao_compra = px.bar(
       grafico_profissao_compra,
       x="Profissão Cliente",
-      y="Valor líquido"
-      labels{"Valor líquido":"Valor","Profissão Cliente":"Profissão"}
+      y="Valor líquido",
+      labels={"Valor líquido":"Valor","Profissão Cliente":"Profissão"}
 )
       
 st.plotly_chart(grafico_profissao_compra)
