@@ -90,10 +90,10 @@ st.plotly_chart(grafico_profissao_compra)
 st.title("Consultor que mais vendeu")
 
 grafico_Consultor_vendas = (
-    df_sales
-    .groupby("Consultor")
-    .agg({"Valor líquido": "sum"})
-    .reset_index()
+      df_sales
+      .groupby("Consultor")
+      .agg({"Valor líquido": "sum"})
+      .reset_index()
 )
 
 grafico_consultor_vendas = px.bar(
