@@ -139,3 +139,23 @@ st.plotly_chart(grafico_procedimento_vendas)
 
 
 #tabela
+
+
+
+groupby_unidade_fonte_paga = ( 
+  df_leads
+  .groupby(["Unidade","Fonte"])
+  .agg({"ID do leads":"nunique"})
+  .reset_index()
+)
+
+st.write(groupby_unidade_fonte_paga)
+
+
+groupby_unidade_fonte_orgânica = ( 
+  df_leads_fontes_organicas
+  .groupby(["Unidade","Fonte"])
+  .agg({"ID do leads":"nunique"})
+  .reset_index()
+)
+st.write(groupby_unidade_fonte_organica)
