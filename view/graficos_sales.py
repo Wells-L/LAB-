@@ -66,45 +66,50 @@ grafico_vendas_dia_loja = px.bar(
 st.plotly_chart(grafico_vendas_dia_loja)
 
 #profissoes que mais compram
+#dividir em duas colonas col1, col2 = st.column(2)
+with col1:
+  st.title("profissões que mais compram")
 
-st.title("profissões que mais compram")
+  grafico_profissao_compra = (
+      df_sales
+      .groupby("Profissão cliente")
+      .agg({"Valor líquido": "sum"})
+      .reset_index()
+    )#sort_values(valor liquido", ascending=False)
 
-grafico_profissao_compra = (
-    df_sales
-    .groupby("Profissão cliente")
-    .agg({"Valor líquido": "sum"})
-    .reset_index()
-    .head(10)
-  )#sort_values(valor liquido", ascending=False)
+  grafico_profissao_compra = px.bar(
+        grafico_profissao_compra,
+        x="Profissão cliente",
+        y="Valor líquido",
+        labels={"Valor líquido":"Valor","Profissão cliente":"Profissão"}
+  )
 
-grafico_profissao_compra = px.bar(
-      grafico_profissao_compra,
-      x="Profissão cliente",
-      y="Valor líquido",
-      labels={"Valor líquido":"Valor","Profissão cliente":"Profissão"}
-)
+  st.plotly_chart(grafico_profissao_compra)
 
-st.plotly_chart(grafico_profissao_compra)
+#profissoes que mais compram grafico de pizza
+
 
 #Consultor que mais vendeu
 
-st.title("Consultor que mais vendeu")
+with col2:
 
-grafico_Consultor_vendas = (
-      df_sales
-      .groupby("Consultor")
-      .agg({"Valor líquido": "sum"})
-      .reset_index()
-)
+  st.title("Consultor que mais vendeu")
 
-grafico_Consultor_vendas = px.bar(
-      grafico_Consultor_vendas,
-      x="Consultor",
-      y="Valor líquido",
-      labels={"Valor líquido":"Valor","Consultor":"Consultor"}
-)
+  grafico_Consultor_vendas = (
+        df_sales
+        .groupby("Consultor")
+        .agg({"Valor líquido": "sum"})
+        .reset_index()
+  )
 
-st.plotly_chart(grafico_Consultor_vendas)
+  grafico_Consultor_vendas = px.bar(
+        grafico_Consultor_vendas,
+        x="Consultor",
+        y="Valor líquido",
+        labels={"Valor líquido":"Valor","Consultor":"Consultor"}
+  )
+
+  st.plotly_chart(grafico_Consultor_vendas)
 
 #procedimento que mais vendeu
 
