@@ -60,7 +60,7 @@ grafico_vendas_dia_loja = px.bar(
       x="Dia",
       y="Valor líquido",
       color="Unidade",
-    
+
 )
 
 st.plotly_chart(grafico_vendas_dia_loja)
@@ -82,7 +82,7 @@ grafico_profissao_compra = px.bar(
       y="Valor líquido",
       labels={"Valor líquido":"Valor","Profissão cliente":"Profissão"}
 )
-      
+
 st.plotly_chart(grafico_profissao_compra)
 
 #Consultor que mais vendeu
