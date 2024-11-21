@@ -74,7 +74,8 @@ grafico_profissao_compra = (
     .groupby("Profissão cliente")
     .agg({"Valor líquido": "sum"})
     .reset_index()
-  )
+    .head(10)
+  )#sort_values(valor liquido", ascending=False)
 
 grafico_profissao_compra = px.bar(
       grafico_profissao_compra,
