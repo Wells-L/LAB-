@@ -20,11 +20,12 @@ df_sales["Data venda"] = pd.to_datetime(df_sales["Data venda"])
 
 #isolanado o doa do campo"data venda
 df_sales["Dia"] = df_sales["Data venda"].dt.day
+
 #tratativa 2 
-df_sales.loc[df_sales["Status"] == "Finalizado"]
+df_sales = df_sales.loc[df_sales["Status"] == "Finalizado"]
 
 #tratativa 3
-df_sales =df_sales.loc[df_sales["Consultor"] != "BKO Vendas"]
+df_sales = df_sales.loc[df_sales["Consultor"] != "BKO Vendas"]
 
 #groupby vendas por dia
 
