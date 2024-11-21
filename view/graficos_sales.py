@@ -25,9 +25,8 @@ df_sales["Dia"] = df_sales["Data venda"].dt.day
 df_sales = df_sales.loc[df_sales["Status"] == "Finalizado"]
 
 #tratativa 3
-df_sales = df_sales.loc[df_sales["Consultor"] != "BKO Vendas"]
-st.write("teste")
-st.dataframe(df_sales)
+df_sales = df_sales.loc[df_sales["Consultor"] != "BKO VENDAS"]
+
 #groupby vendas por dia
 
 groupby_vendas_por_dia = (
