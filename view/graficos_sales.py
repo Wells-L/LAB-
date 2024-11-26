@@ -141,7 +141,7 @@ st.plotly_chart(grafico_procedimento_vendas)
 #tabela
 
 df_leads_fontes_pagas = df_leads.loc[df_leads["Fonte"].isin(fontes_pagas)]
-df_leads_fontes_orgânicas = df_leads.loc[df_leads["Fonte"].isin(fontes_orgânicas)]
+df_leads_fontes_organicas = df_leads.loc[df_leads["Fonte"].isin(fontes_organicas)]
 
 groupby_unidade_fonte_paga = (
   df_leads
