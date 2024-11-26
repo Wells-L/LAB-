@@ -21,7 +21,7 @@ df_sales["Data venda"] = pd.to_datetime(df_sales["Data venda"])
 #isolanado o dia do campo data venda
 df_sales["Dia"] = df_sales["Data venda"].dt.day
 
-#tratativa 2 
+#tratativa 2
 df_sales = df_sales.loc[df_sales["Status"] == "Finalizado"]
 
 #tratativa 3
@@ -140,9 +140,10 @@ st.plotly_chart(grafico_procedimento_vendas)
 
 #tabela
 
+df_leads_fontes_pagas = df_leads.loc[df_leads["Fonte"].isin(fontes_pagas)]
+df_leads_fontes_orgânicas = df_leads.loc[df_leads["Fonte"].isin(fontes_orgânicas)]
 
-
-groupby_unidade_fonte_paga = ( 
+groupby_unidade_fonte_paga = (
   df_leads
   .groupby(["Unidade","Fonte"])
   .agg({"ID do leads":"nunique"})
@@ -152,7 +153,7 @@ groupby_unidade_fonte_paga = (
 st.write(groupby_unidade_fonte_paga)
 
 
-groupby_unidade_fonte_organica = ( 
+groupby_unidade_fonte_organica = (
   df_leads_fontes_organica
   .groupby(["Unidade","Fonte"])
   .agg({"ID do leads":"nunique"})
