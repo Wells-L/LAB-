@@ -64,5 +64,5 @@ if submitted :
     st.success("dados foram atualizados com sucesso")
     st.cache_data.clear()
     st.rerun()
-   
-
+#https://github.com/streamlit/gsheets-connection/blob/main/examples/pages/Service_Account_Example.py
+#licao: arrumar streamlit e colocar dados no banco
