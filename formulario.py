@@ -60,6 +60,9 @@ if submitted :
     resultado = pd.concat([df, novos_dados], ignore_index=True)
 
   
-    df =  conn.update(data=resultado)
+    df = conn.update(data=resultado)
     st.success("dados foram atualizados com sucesso")
+    st.cache_data.clear()
+    st.rerun()
+   
 
