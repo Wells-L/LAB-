@@ -1,14 +1,14 @@
 
 #imports
 import random
-import streamlit as st
+import streamlit as st # type: ignore
 
 #título
 st.title("FORCA")
 
 # escolhendo palavra
 lista_palavras = []
-with open('content/palavras.txt', 'r') as palavras_file:
+with open('palavras.txt', 'r') as palavras_file:
     for line in palavras_file:
         lista_palavras.append(line.strip())
 
@@ -54,14 +54,14 @@ tentativas =  st.session_state["tentativas"]
 
 #dificuldade
 
-dificuldade = st.select.box("Escolha o nível de dificuldade:", ("Fácil", "Médio", "Difícil"))
-if dificuldade == "Fácil":
-    tentativas_totais = len(palavra_secreta) + 3
-elif dificuldade == "Médio":
-    tentativas_totais = len(palavra_secreta)
-elif dificuldade == "Difícil":
-    tentativas_totais = len(palavra_secreta) - 2
-
+#dificuldade = st.select.box("Escolha o nível de dificuldade:", ("Fácil", "Médio", "Difícil"))
+#if dificuldade == "Fácil":
+    #tentativas_totais = len(palavra_secreta) + 3
+#elif dificuldade == "Médio":
+    #tentativas_totais = len(palavra_secreta)
+#elif dificuldade == "Difícil":
+    #tentativas_totais = len(palavra_secreta) - 2
+dificuldade = "Fácil"
 
 #lógica
 
